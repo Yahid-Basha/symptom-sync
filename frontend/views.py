@@ -20,8 +20,7 @@ firebaseConfig={
     'databaseURL': "https://indian-health-default-rtdb.firebaseio.com/",
 }
 
-
-
+# Establishing connection with firebase
 firebase=pyrebase.initialize_app(firebaseConfig)
 auth=firebase.auth()
 db=firebase.database()
@@ -30,7 +29,7 @@ storagea=firebase.storage()
 def home(request):
     return render(request,'home.html')
 
-
+#Login Page View
 def login(request):
     if request.method=='POST':
         Username=request.POST.get('username')
@@ -38,8 +37,8 @@ def login(request):
         password=request.POST.get('pswd1')
         print(email,password)
         try:
+            #Check if user exists
             user=auth.sign_in_with_email_and_password(email,password)
-
             print(user)
             usera.Username=Username
             usera.Email=email
@@ -51,19 +50,37 @@ def login(request):
             usera.BloodGroup=more_data["BloodGroup"]
             usera.health_problems=more_data["list_of_Healthissues"]
 
-            clusters=dict(db.child("Clusters").get().val())
-            print(clusters)
-            cluster_users=list(clusters.keys())
-            cluster_emails=list(clusters.values())
-            print(cluster_users)
-            print(cluster_emails)
+            #Storage URLs for prescriptions and others to be loaded to the user profile
+            if "prescriptions" in more_data["Storage-urls"].keys():
+                usera.pfile_names=list(dict(more_data["Storage-urls"]["File Names"]["prescriptions"]).values())
+                usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
+                usera.prescriptions_times=list(usera.urls_prescriptions.keys())
+                usera.prescriptions_urls=list(usera.urls_prescriptions.values())
+                print(usera.urls_prescriptions)
 
-            usera.cluster_users=cluster_users
-            usera.cluster_emails=cluster_emails
-            print(usera.cluster_users)
-            print(usera.cluster_emails)
-            return render(request,'profile.html',{'usera':usera})
-
+            if "Other Files" in more_data["Storage-urls"].keys():
+                usera.ofile_names=list(dict(more_data["Storage-urls"]["File Names"]["Other Files"]).values())
+                usera.urls_Others=dict(more_data["Storage-urls"]["Other Files"])
+                usera.others_urls=list(usera.urls_Others.values())
+                usera.others_times=list(usera.urls_Others.keys())
+                print(usera.urls_Others)
+            cluster_users=[]
+            cluster_emails=[]
+            for i in list(usera.health_problems):
+                if Username in db.child("Clusters").child(i).get().val():
+                    print(f"User {Username} already in cluster {i}")
+                    pass
+                else:
+                    db.child("Clusters").child(i).child(Username).set(more_data["Email"])
+                    print(f"Added {Username} to {i} cluster")
+            
+            for i in list(usera.health_problems):
+                cluster_users.append(list(db.child("Clusters").child(i).get().val().keys()))
+                cluster_emails.append(list(db.child("Clusters").child(i).get().val().values()))
+                usera.cluster_users=[x for x in cluster_users if x!=Username]
+                usera.cluster_emails=[x for x in cluster_emails if x!=more_data["Email"]]
+                return render(request,'profile.html',{'usera':usera})
+           
         except:
             message="Invalid Credentials"
             print(message)
@@ -84,8 +101,7 @@ def signin(request):
             except:
                 message="Unable to create user"
                 print(message)
-                # return render(request,'login.html',)
-
+                return render(request,'signin.html',{'msg':message})
 
     Username = request.POST.get('uname')
     data={
@@ -96,8 +112,12 @@ def signin(request):
         'BloodGroup':request.POST.get('bloodgroup'),
         'list_of_Healthissues': request.POST.getlist('Healthprob[]'),
         }
-
-    db.child("Users").child(Username).set(data)
+    if Username not in db.child("Users").get().val().keys():
+        db.child("Users").child(Username).set(data)
+    else:
+        message="Username already exists"
+        print(message)
+        return render(request,'signin.html',{'msg':message})
     return render(request,'signin.html')
 
 
@@ -106,8 +126,6 @@ def terms(request):
 
 def profile(request):
     return render(request,'profile.html')
-
-
 
 def Data(request):
     if request.method=='POST':
@@ -141,6 +159,7 @@ def Data(request):
             print(Blood_sugar_keys)
             usera.Blood_Sugar_keys=Blood_sugar_keys
 
+        #User data to diplay
         more_data=dict(db.child("Users").child(username).get().val())
         usera.Full_Name=more_data["name"]
         usera.Username=username
@@ -152,8 +171,11 @@ def Data(request):
         usera.urls_prescriptions=more_data["Storage-urls"]["prescriptions"]
         usera.urls_Others=more_data["Storage-urls"]["Others Files"]
         usera.health_problems=more_data["list_of_Healthissues"]
+
+        #Storage URLs and Names for prescriptions and others to be loaded to the user profile
         usera.pfile_names=list(dict(more_data["Storage-urls"]["File Names"]["prescriptions"]).values())
         usera.ofile_names=list(dict(more_data["Storage-urls"]["File Names"]["Other Files"]).values())
+
         if "prescriptions" in more_data["Storage-urls"].keys():
             usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
             usera.prescriptions_times=list(usera.urls_prescriptions.keys())
@@ -201,7 +223,7 @@ def storage(request):
         usera.BloodGroup=more_data["BloodGroup"]
         usera.health_problems=more_data["list_of_Healthissues"]
        
-
+        #get urls of files from firebase to user
         if "prescriptions" in more_data["Storage-urls"].keys():
             usera.pfile_names=list(dict(more_data["Storage-urls"]["File Names"]["prescriptions"]).values())
             usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
@@ -215,36 +237,77 @@ def storage(request):
             usera.others_urls=list(usera.urls_Others.values())
             usera.others_times=list(usera.urls_Others.keys())
             print(usera.urls_Others)
+            cluster_users=[]
+            cluster_emails=[]
+        #User Clusters Formation
+        for i in list(usera.health_problems):
+            if Username in db.child("Clusters").child(i).get().val():
+                pass
+                print(f"{Username} already in {i} cluster")
+            else:
+                db.child("Clusters").child(i).child(Username).set(more_data["Email"])
+                print(f"{Username} added to {i} cluster")
+
+        for i in list(usera.health_problems):
+            cluster_users.append(list(db.child("Clusters").child(i).get().val().keys()))
+            cluster_emails.append(list(db.child("Clusters").child(i).get().val().values()))
+            usera.cluster_users=[x for x in cluster_users if x!=Username]
+            usera.cluster_emails=[x for x in cluster_emails if x!=more_data["Email"]]
+        return render(request,'profile.html',{'usera':usera})
+
+def refresh_clusters(request):
+    #get data from firebase
+    Username=request.POST.get('username')
+    more_data=dict(db.child("Users").get().val())
+    clusters=dict(db.child("Clusters").get().val())
+    for i in more_data.keys():
+        data_of_user=dict(db.child("Users").child(i).get().val())
+        for i in data_of_user.keys():
+            if i=='list_of_Healthissues':
+                #form clusters
+                for j in data_of_user[i]:
+                    if j not in clusters.keys():
+                        db.child("Clusters").child(j).child(i).set(data_of_user["Email"])
+    more_data=dict(db.child("Users").child(Username).get().val())
+    print(more_data)
+    usera.Full_Name=more_data["name"]
+    usera.Username=Username
+    usera.Email=more_data["Email"]
+    usera.Gender=more_data["Gender"]
+    usera.DateOfBirth=more_data["DOB"]
+    usera.BloodGroup=more_data["BloodGroup"]
+    usera.health_problems=more_data["list_of_Healthissues"]
+       
+    #get urls of files from firebase to user
+    if "prescriptions" in more_data["Storage-urls"].keys():
+        usera.pfile_names=list(dict(more_data["Storage-urls"]["File Names"]["prescriptions"]).values())
+        usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
+        usera.prescriptions_times=list(usera.urls_prescriptions.keys())
+        usera.prescriptions_urls=list(usera.urls_prescriptions.values())
+
+        print(usera.urls_prescriptions)
+    if "Other Files" in more_data["Storage-urls"].keys():
+        usera.ofile_names=list(dict(more_data["Storage-urls"]["File Names"]["Other Files"]).values())
+        usera.urls_Others=dict(more_data["Storage-urls"]["Other Files"])
+        usera.others_urls=list(usera.urls_Others.values())
+        usera.others_times=list(usera.urls_Others.keys())
+        print(usera.urls_Others)
         
         #User Clusters Formation
+    cluster_users=[]
+    cluster_emails=[]
+        #User Clusters Formation
+    for i in list(usera.health_problems):
+        if Username in db.child("Clusters").child(i).get().val():
+            pass
+            print(f"{Username} already in {i} cluster")
+        else:
+            db.child("Clusters").child(i).child(Username).set(more_data["Email"])
+            print(f"{Username} added to {i} cluster")
 
-
-        #return
-    return render(request,'profile.html',{'usera':usera})
-
-def refresh(request):
-    if request.method=='POST':
-        value=request.POST.get('refresh')
-        if value=="refresh":
-            Username=request.POST.get('username')
-            more_data=dict(db.child("Users").child("nikitha_1608").get().val())
-            print(more_data)
-            usera.Full_Name=more_data["name"]
-            usera.Username=Username
-            usera.Email=more_data["Email"]
-            usera.Gender=more_data["Gender"]
-            usera.DateOfBirth=more_data["DOB"]
-            usera.BloodGroup=more_data["BloodGroup"]
-            usera.health_problems=more_data["list_of_Healthissues"]
-            usera.pfile_names=list(dict(more_data["Storage-urls"]["File Names"]["prescriptions"]).values())
-            usera.ofile_names=list(dict(more_data["Storage-urls"]["File Names"]["Other Files"]).values())
-            usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
-            usera.prescriptions_times=list(usera.urls_prescriptions.keys())
-            usera.prescriptions_urls=list(usera.urls_prescriptions.values())
-            print(usera.urls_prescriptions)
-            usera.urls_Others=dict(more_data["Storage-urls"]["Other Files"])
-            usera.others_urls=list(usera.urls_Others.values())
-            usera.others_times=list(usera.urls_Others.keys())
-            print(usera.urls_Others)
-
+    for i in list(usera.health_problems):
+        cluster_users.append(list(db.child("Clusters").child(i).get().val().keys()))
+        cluster_emails.append(list(db.child("Clusters").child(i).get().val().values()))
+        usera.cluster_users=[x for x in cluster_users if x!=Username]
+        usera.cluster_emails=[x for x in cluster_emails if x!=more_data["Email"]]
     return render(request,'profile.html',{'usera':usera})
