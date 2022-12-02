@@ -33,5 +33,5 @@ urlpatterns = [
     path('profile',views.profile,name='profile'),
     path('Data',views.Data,name='Data'),
     path('storage',views.storage,name='storage'),
-    path('refresh',views.refresh,name='refresh'),
+    path('refresh',views.refresh_clusters,name='refresh'),
 ]
