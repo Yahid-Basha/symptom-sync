@@ -1,31 +1,29 @@
 <html>
+    {% load static %}
     <head>
         <title>Profile | IndianHealthNetwork</title>
-        <link rel="icon" href="\static\logo.png" type="image">
-        <link rel="stylesheet" type="text/css" href="\static\home.css">
-        
-        <link rel="stylesheet" type="text/css" href="\static\profile.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
     </head>
     <body>
-        <div class="main">
-            <div class="navbar">
-                <div class="abc"><img src="\static\logo.png" class="log"> </div>
-                <div class="icon">
-                    <h2 class="logo">IndianHealthNetwork</h2>
-                </div>            
-                <div class="menu">
-                    <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'profile' %}">My Profile</a></li>
-                    </ul>
-                </div>
-            </div>  
-                <p class="love" style="font-size: 40px ;text-align: center;">My Profile</p>
-                <table  width="100%">
+        <div class="nav">
+            <h2 class="Brand-name">Indian Health Network</h2>
+            <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
+
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'login' %}">LogIn</a></li>
+                <li><a href="{% url 'signup' %}">SignUp</a></li>
+            </ul>
+        </div> 
+        <p>My Profile</p>
+        
+        <table  width="100%">
                     <tr>
                         <td>
                             <div class="image">
-                                <center><img src="/static/logo.png" width="300px" class="profile"></center>
+                                <center><img src="{% static 'logo.png' %}" width="300px" class="profile"></center>
                             </div>
                         </td>
                         <td >

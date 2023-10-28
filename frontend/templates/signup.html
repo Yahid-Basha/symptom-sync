@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>SignUp | IndianHealthNetwork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+
+  </head>
+  
+<body>
+  <div class="nav">
+    <h2 class="Brand-name">Indian Health Network</h2>
+    <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
+    <div class="menu">
+        <div class="nav-home"><a href="{% url 'home' %}">Home</a></div>
+        <div class="nav-login"><a href="{% url 'login' %}">LogIn</a></div>
+        <div class="nav-signUp"><a href="{% url 'signup' %}">SignUp</a></div>
+    </div>
+  </div>
+  <div class="signup-container">
+      <div >
+        <img class="img-class" src="{% static 'communityLogo.png' %}" alt="image" width="300px">
+      </div>
+      <div class="form">
+        <h1>Start your journey</h1>
+        <img src="{% static 'airplane.png' %}"> 
+        <form action="/signup" method="POST">
+          {% csrf_token %}
+          <div class="text-input-containers">
+            <div class="input-container">
+              <label for="uname">Username</label>
+              <input type="text" placeholder="Enter your Username" name="uname" id="uname"/>
+            </div>
+            <div class="input-container">
+              <label for="fname">Full Name</label>
+              <input type="text" placeholder="Enter your Full Name" name="fname" id="fname" />
+            </div>
+            <div class="input-container">
+              <label for="email">Email Id</label>
+              <input type="email" placeholder="Enter your Email Id" name="email" id="email" />
+            </div>
+            <div class="input-container">
+              <label for="dob">Date of Birth</label>
+              <input type="date" name="dob" id="dob"/>
+            </div>
+            <div class="input-container">
+              <label for="psw">Password</label>
+              <input type="password" placeholder="Enter Password" name="psw" id="psw" />
+            </div>
+            <div class="input-container">
+              <label for="cpsw">Confirm Password</label>
+              <input type="password" placeholder="Confirm Password" name="cpsw" id="cpsw" />
+            </div>
+          </div>
+          
+          <div class="input-container">
+            <label for="Gender">Gender<br>
+              <input type="radio" name="Gender" value="Male" id="male"/>
+              <label>Male</label>
+              <input type="radio" name="Gender" value="Female" id="female">
+              <label>Female</label>
+              <input type="radio" name="Gender" value="Others" id="others">
+              <label>Others</label>
+              <input type="radio" name="Gender" value="no_mention" id="no_mention">
+              <label>Prefer not to say</label>
+            </label>
+          </div>
+          <div class="input-container">
+            <label for="bloodgroup">
+              Blood Group
+            <select id='bbox' name="bloodgroup" id="bloodgroup">
+              <option>A<sup>+</sup></option>
+              <option>A<sup>-</sup></option>
+              <option>B<sup>+</sup></option>
+              <option>B<sup>-</sup></option>
+              <option>AB<sup>+</sup></option>
+              <option>AB<sup>-</sup></option>
+              <option>O<sup>+</sup></option>
+              <option>O<sup>-</sup></option>   
+            </select> 
+            </label>
+          </div>
+          <div class="input-container-cb">
+            <p>Your Health Issues : </p>
+            <div class="checkbox-grid">
+  
+              <div class = "checkboxes">
+                <label for="Healthproblem1">
+                  <input type="checkbox" id="Healthproblem1" name="Healthprob[]" value="Blood Pressure">Blood Pressure</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem2">
+                  <input type="checkbox" id="Healthproblem2" name="Healthprob[]" value="Diabetes">Diabetes</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem3"><input type="checkbox" id="Healthproblem3" name="Healthprob[]" value="Heart Disease">Heart Disease</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem4"><input type="checkbox" id="Healthproblem4" name="Healthprob[]" value="Cancer">Cancer</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem5"><input type="checkbox" id="Healthproblem5" name="Healthprob[]" value="Asthma">Asthma</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem6"><input type="checkbox" id="Healthproblem6" name="Healthprob[]" value="Kidney Disease">Kidney Disease</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem7"><input type="checkbox" id="Healthproblem7" name="Healthprob[]" value="Liver Disease">Liver Disease</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem8"><input type="checkbox" id="Healthproblem8" name="Healthprob[]" value="Thyroid">Thyroid</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem9"><input type="checkbox" id="Healthproblem9" name="Healthprob[]" value="Arthritis">Arthritis</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem10"><input type="checkbox" id="Healthproblem10" name="Healthprob[]" value="Depression">Depression</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem11"><input type="checkbox" id="Healthproblem11" name="Healthprob[]" value="Anxiety">Anxiety</label>
+              </div>
+              <div class = "checkboxes">
+                <label for="Healthproblem12"><input type="checkbox" id="Healthproblem12" name="Healthprob[]" value="Obesity">Obesity</label>
+              </div>
+            </div>    
+          </div>
+          <p>By creating an account you are accepting our <a href="{% url 'terms' %}">Terms and Conditions</a>.</p>
+          <button type="submit" value="SignUp">SignUp</button>
+          </div>
+            
+          
+        </form>
+      </div>
+      
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="{% url 'login' %}">LogIn Here</a>
+    </p>
+    
+  </body>
+</html>

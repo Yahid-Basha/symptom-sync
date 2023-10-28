@@ -1,34 +1,38 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <title>LogIn | IndianHealthNetwork</title>
     <link rel="icon" href="\static\logo.png" type="image">
-    <link rel="stylesheet" type="text/css" href="\static\style.css">
-    <link rel="stylesheet" type="text/css" href="\static\home.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
   </head>
-    <div class="main">
-        <div class="navbar">
-            <div class="abc"><img src="\static\logo.png" class="log"> </div>
-            <div class="icon">
-                <h2 class="logo">IndianHealthNetwork</h2>
-            </div>
-            <div class="menu">
-                <ul>
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'login' %}">LogIn</a></li>
-                  <li><a href="{% url 'signin' %}">SignUp</a></li>
-                </ul>
-            </div>
-        </div>  
-    </div>
-
   <body>
-    <br><br><br><br><br><br><br><br>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    <div class="nav">
+      <h2 class="Brand-name">Indian Health Network</h2>
+      <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
+      <ul class="menu">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'login' %}">LogIn</a></li>
+          <li><a href="{% url 'signup' %}">SignUp</a></li>
+      </ul>
+    </div> 
+
     <div class="login-box">
-      <h1>LogIn</h1> <br>
-      <h4 class="id"><marquee behavior="scroll" direction="left">We missed you.. <br> Welcome back!</marquee></h4>
+
+      <p class="para-1">
+        Hey, Good to see you again! <br> Please LogIn to continue.
+      </p>
 
       <form action="/login" method="POST">
+        <h1>LogIn</h1> 
         {% csrf_token %}
         <label>Username</label>
         <input type="text" placeholder="Enter your Username" name="username"/>
@@ -39,12 +43,13 @@
         <br>
         <button type="submit" value="Submit" >Log In</button>
       </form>
-
+      
     </div>
+ 
     <p class="para-2" >
-      Don't have an account yet? <a href="{% url 'signin' %}">SignUp Here</a>
+      Don't have an account yet? <a href="{% url 'signup' %}">SignUp Here</a>
     </p>
-    <br><br><br><br><br><br><br><br><br><br><br>
+
   </body>
 </html>
 

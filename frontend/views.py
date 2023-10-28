@@ -39,11 +39,11 @@ def login(request):
         try:
             #Check if user exists
             user=auth.sign_in_with_email_and_password(email,password)
-            print(user)
+            print("user logged in")
             usera.Username=Username
             usera.Email=email
             more_data=dict(db.child("Users").child(Username).get().val())
-            print(more_data)
+            print("data fetched")
             usera.Full_Name=more_data["name"]
             usera.Gender=more_data["Gender"]
             usera.DateOfBirth=more_data["DOB"]
@@ -55,13 +55,13 @@ def login(request):
                 usera.urls_prescriptions=dict(more_data["Storage-urls"]["prescriptions"])
                 usera.prescriptions_times=list(usera.urls_prescriptions.keys())
                 usera.prescriptions_urls=list(usera.urls_prescriptions.values())
-                print(usera.urls_prescriptions)
+                print(" prescriptions urls fetched")
             if "Other Files" in more_data["Storage-urls"].keys():
                 usera.ofile_names=list(dict(more_data["Storage-urls"]["File Names"]["Other Files"]).values())
                 usera.urls_Others=dict(more_data["Storage-urls"]["Other Files"])
                 usera.others_urls=list(usera.urls_Others.values())
                 usera.others_times=list(usera.urls_Others.keys())
-                print(usera.urls_Others)
+                print("usera.urls_Others fetched")
                 
             #User Clusters Formation
             cluster_users=[]
@@ -84,14 +84,14 @@ def login(request):
                 print(usera.cluster_emails)
                 return render(request,'profile.html',{'usera':usera})
            
-        except:
+        except Exception as e:
             message="Invalid Credentials"
-            print(message)
-            return render(request,'login.html',{'msg':message})
+            print(e)
+            return render(request,'login.html',{'msg':message,'error':True})
     return render(request,'login.html')
 
 
-def signin(request):
+def signup(request):
     if request.method=='POST':
         email=request.POST.get('email')
         password=request.POST.get('psw')
@@ -104,7 +104,7 @@ def signin(request):
             except:
                 message="Unable to create user"
                 print(message)
-                return render(request,'signin.html',{'msg':message})
+                return render(request,'signup.html',{'msg':message})
 
     Username = request.POST.get('uname')
     data={
@@ -120,8 +120,8 @@ def signin(request):
     else:
         message="Username already exists"
         print(message)
-        return render(request,'signin.html',{'msg':message})
-    return render(request,'signin.html')
+        return render(request,'signup.html',{'msg':message})
+    return render(request,'signup.html')
 
 
 def terms(request):

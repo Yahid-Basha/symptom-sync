@@ -1,3 +1,56 @@
-body{
-    background-color: aqua;
+body{ 
+    margin: 0;
+    padding: 0;
+    background-color: rgb(43, 43, 51);
+    background-attachment: fixed;
+}
+.nav{
+    background-color: rgb(43, 43, 51);
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    color: white;
+}
+
+.nav img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.Main{ 
+    margin-top: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.Main img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
+
+.text{
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 }

@@ -23,15 +23,16 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from . import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('login',views.login,name='login'),
-    path('signin',views.signin,name='signin'),
+    path('signup',views.signup,name='signup'),
     path('terms',views.terms,name='terms'),
     path('profile',views.profile,name='profile'),
     path('Data',views.Data,name='Data'),
     path('storage',views.storage,name='storage'),
     path('refresh',views.refresh_clusters,name='refresh'),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
