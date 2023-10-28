@@ -1,7 +1,6 @@
 body{ 
     margin: 0;
     padding: 0;
-    background-color: aqua;
 }
 
 .nav{
@@ -32,14 +31,6 @@ body{
 
 .logo{
     border-radius: 50%;
-}
-
-.Brand-name{
-    font-family: 'Agbalumo', cursive;
-    font-family: 'Cinzel', serif;
-    font-family: 'Della Respira', serif;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Italiana', serif;
 }
 
 .nav-end-menu{
@@ -93,24 +84,47 @@ h1{
     margin: 18px 0px;
 }
 
-.Main{ 
-    /* margin-top: 200px; */
-    color: white;
+
+
+.Main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.text1, .text2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:20px;
-    background-color: rgb(94, 59, 14);
+    text-align: center;
+    padding: 20px 0px;
 }
 
-.Main img{
-    border-radius: 14px;
+.home-img1{
+    padding: 20px;
+    padding-left: 40px;
 }
+
+.home-img2{
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.gItem:nth-child(1),
+.gItem:nth-child(3) {
+    grid-row: span 2;
+}
+
+
+
+
 
 .text{
-    font-size: xx-large;
+    font-size: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
 }
+

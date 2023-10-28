@@ -1,62 +1,76 @@
-body{
-    background-color: white;
+body{ 
+  margin: 0;
+  padding: 0;
 }
 
 .nav{
-    background-color: #ace796;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    padding: 16px;
-    top: 0;
-    left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  padding: 16px;
+  top: 0;
+  left: 0;
 }
 
 .nav-start{
-    display: flex;
-    gap: 15px;
-    align-items: center;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.Brand-name{
+  font-family: 'Agbalumo', cursive;
+  font-family: 'Cinzel', serif;
+  font-family: 'Della Respira', serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Italiana', serif;
+  font-size: 2rem;
 }
 
 .logo{
   border-radius: 50%;
 }
 
-.Brand-name{
-    font-family: 'Agbalumo', cursive;
-    font-family: 'Cinzel', serif;
-    font-family: 'Della Respira', serif;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Italiana', serif;
+.nav-end-menu{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 0.8em;
 }
 
-.nav-end-menu{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    background-color: #2fa405;
-    border-radius: 40px;
-    padding: 0.8em;
-    font-size: 1.2em;
+.nav-home, .nav-login, .nav-signUp {
+  padding: 0.6rem;
+  background: #f6edff;
+  font-size: 1.4rem;
+  color: #212b36;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  position: relative;
+}
+
+
+.nav-home:hover, .nav-login:hover, .nav-signUp:hover {
+  cursor: pointer;
+  left: -2px;
+  top: -2px;
+  box-shadow: 7px 7px black;
+}
+
+.nav-home:active, .nav-login:active, .nav-signUp:active {
+  left: 1px;
+  top: 1px;
+  box-shadow: 4px 4px black;
 }
 
 
 a{
-    text-decoration: none;
-    color: rgb(24, 28, 45);
-    text-shadow: 3px 2px 4px #ace796;
+  text-decoration: none;
+  color: rgb(24, 28, 45);
 }
 
-
-a:hover{
-    font-size: 1.05em;
-    text-shadow: 3px 2px 4px #2a3d24;
-}
-
-.nav-end-menu:hover{
-    background-color: #34bf02;
-}
 
 
 .signup-container{
