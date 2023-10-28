@@ -5,25 +5,29 @@
     <title>Home | Indian Health Network</title>
     <link rel="icon" href="frontend\static\logo.png" type="image">
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <div class="nav">
+        <div class="nav-start">
+            <img class="logo" src="{% static 'logo.png' %}" width="50px" alt="logo">
             <h2 class="Brand-name">Indian Health Network</h2>
-            <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
-
-            <ul class="menu">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'login' %}">LogIn</a></li>
-                <li><a href="{% url 'signup' %}">SignUp</a></li>
-            </ul>
-
+        </div>
+         
+        <div class="nav-end-menu">
+            <div class="nav-home"><a href="{% url 'home' %}">Home</a></div>
+            <div class="nav-login"><a href="{% url 'login' %}">LogIn</a></div>
+            <div class="nav-signUp"><a href="{% url 'signup' %}">SignUp</a></div>
+        </div>
     </div> 
 
-
-
     <div class="Main">
-        <img alt="network Image" align="right" src="{% static 'network.jpg' %}" width="550" height="550">
+        <img alt="network Image" align="right" src="{% static 'home-image.png' %}" width="550" height="550">
         <div class="text">
             <p class="quote">
                 You don't have to struggle in Silence.<br> You are not Alone in this.

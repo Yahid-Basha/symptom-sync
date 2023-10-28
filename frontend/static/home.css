@@ -1,50 +1,110 @@
 body{ 
     margin: 0;
     padding: 0;
-    background-color: rgb(43, 43, 51);
-    background-attachment: fixed;
-}
-.nav{
-    background-color: rgb(43, 43, 51);
-    margin-top: 0px;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    align-items: center;
-    color: white;
+    background-color: aqua;
 }
 
-.nav img{
-    width: 60px;
-    height: 60px;
+.nav{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    padding: 16px;
+    top: 0;
+    left: 0;
+}
+
+.nav-start{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.Brand-name{
+    font-family: 'Agbalumo', cursive;
+    font-family: 'Cinzel', serif;
+    font-family: 'Della Respira', serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Italiana', serif;
+    font-size: 2rem;
+}
+
+.logo{
     border-radius: 50%;
 }
 
-ul li a{
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-    font-family: 'Times New Roman', Times, serif;
+.Brand-name{
+    font-family: 'Agbalumo', cursive;
+    font-family: 'Cinzel', serif;
+    font-family: 'Della Respira', serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Italiana', serif;
 }
-ul {
+
+.nav-end-menu{
     display: flex;
-    list-style: none;
+    justify-content: space-between;
+    width: 300px;
+    padding: 0.8em;
+}
+
+.nav-home, .nav-login, .nav-signUp {
+    padding: 0.6rem;
+    background: #f6edff;
+    font-size: 1.4rem;
+    color: #212b36;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+    position: relative;
+  }
+  
+
+.nav-home:hover, .nav-login:hover, .nav-signUp:hover {
+    cursor: pointer;
+    left: -2px;
+    top: -2px;
+    box-shadow: 7px 7px black;
+  }
+
+.nav-home:active, .nav-login:active, .nav-signUp:active {
+    left: 1px;
+    top: 1px;
+    box-shadow: 4px 4px black;
+  }
+
+
+a{
+    text-decoration: none;
+    color: rgb(24, 28, 45);
+}
+
+
+.signup-container{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+h1{
+    margin: 18px 0px;
 }
 
 .Main{ 
-    margin-top: 200px;
+    /* margin-top: 200px; */
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     gap:20px;
+    background-color: rgb(94, 59, 14);
 }
 
 .Main img{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    border-radius: 14px;
 }
 
 .text{

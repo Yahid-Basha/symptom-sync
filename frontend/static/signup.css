@@ -4,11 +4,11 @@ body{
 
 .nav{
     background-color: #ace796;
-    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    padding: 16px;
     top: 0;
     left: 0;
 }
@@ -17,6 +17,10 @@ body{
     display: flex;
     gap: 15px;
     align-items: center;
+}
+
+.logo{
+  border-radius: 50%;
 }
 
 .Brand-name{
