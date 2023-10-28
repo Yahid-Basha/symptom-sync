@@ -12,6 +12,7 @@ body{
     padding: 16px;
     top: 0;
     left: 0;
+    margin-bottom: 20px;
 }
 
 .nav-start{
@@ -88,8 +89,7 @@ h1{
 
 .Main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(1,fr);
     grid-gap: 10px;
 }
 
@@ -101,23 +101,12 @@ h1{
     padding: 20px 0px;
 }
 
-.home-img1{
-    padding: 20px;
-    padding-left: 40px;
+
+.home-img1, .home-img2{
+    width: 500px; 
+    height: 500px;
+    margin: 0px auto;
 }
-
-.home-img2{
-    padding: 40px 20px;
-    margin-top: 20px;
-}
-
-.gItem:nth-child(1),
-.gItem:nth-child(3) {
-    grid-row: span 2;
-}
-
-
-
 
 
 .text{
@@ -127,4 +116,55 @@ h1{
     justify-content: center;
     align-items: start;
 }
+
+@media(min-width: 1100px){
+    .Main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .home-img1, .home-img2{
+        width: 500px; 
+        height: 500px;
+        padding: 20px;
+    }
+}
+  
+@media(min-width:1400px){
+    .Main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+    }
+
+    .gItem:nth-child(1),
+    .gItem:nth-child(3) {
+    grid-row: span 2;
+    }
+
+    .home-img1{
+        padding: 20px;
+        padding-left: 40px;
+    }
+    
+    .home-img2{
+        padding: 40px 20px;
+        margin-top: 20px;
+    }
+
+}
+
+/* Default font size */
+body {
+    font-size: 16px;
+}
+
+/* Increase font size for larger screens */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+
 
