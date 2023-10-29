@@ -91,6 +91,7 @@ h1{
     display: grid;
     grid-template-columns: repeat(1,fr);
     grid-gap: 10px;
+    background-color: #c4bbcd;
 }
 
 .text1, .text2 {
