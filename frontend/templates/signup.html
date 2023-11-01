@@ -3,28 +3,33 @@
 <html lang="en">
   <head>
     <title>SignUp | IndianHealthNetwork</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
 
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&display=swap" rel="stylesheet">
   </head>
   
 <body>
   <div class="nav">
-    <h2 class="Brand-name">Indian Health Network</h2>
-    <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
-    <div class="menu">
+    <div class="nav-start">
+      <img class="logo" src="{% static 'logo.png' %}"  width="50px" "logo"> 
+      <h2 class="Brand-name">Indian Health Network</h2>
+    </div>
+    
+    <div class="nav-end-menu">
         <div class="nav-home"><a href="{% url 'home' %}">Home</a></div>
         <div class="nav-login"><a href="{% url 'login' %}">LogIn</a></div>
         <div class="nav-signUp"><a href="{% url 'signup' %}">SignUp</a></div>
     </div>
   </div>
   <div class="signup-container">
-      <div >
+      <div>
         <img class="img-class" src="{% static 'communityLogo.png' %}" alt="image" width="300px">
       </div>
-      <div class="form">
-        <h1>Start your journey</h1>
-        <img src="{% static 'airplane.png' %}"> 
+      <div class="form">  
+        <h1>Start your journey  👇</h1>
         <form action="/signup" method="POST">
           {% csrf_token %}
           <div class="text-input-containers">
@@ -85,58 +90,57 @@
             <p>Your Health Issues : </p>
             <div class="checkbox-grid">
   
-              <div class = "checkboxes">
-                <label for="Healthproblem1">
-                  <input type="checkbox" id="Healthproblem1" name="Healthprob[]" value="Blood Pressure">Blood Pressure</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem2">
-                  <input type="checkbox" id="Healthproblem2" name="Healthprob[]" value="Diabetes">Diabetes</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem3"><input type="checkbox" id="Healthproblem3" name="Healthprob[]" value="Heart Disease">Heart Disease</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem4"><input type="checkbox" id="Healthproblem4" name="Healthprob[]" value="Cancer">Cancer</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem5"><input type="checkbox" id="Healthproblem5" name="Healthprob[]" value="Asthma">Asthma</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem6"><input type="checkbox" id="Healthproblem6" name="Healthprob[]" value="Kidney Disease">Kidney Disease</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem7"><input type="checkbox" id="Healthproblem7" name="Healthprob[]" value="Liver Disease">Liver Disease</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem8"><input type="checkbox" id="Healthproblem8" name="Healthprob[]" value="Thyroid">Thyroid</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem9"><input type="checkbox" id="Healthproblem9" name="Healthprob[]" value="Arthritis">Arthritis</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem10"><input type="checkbox" id="Healthproblem10" name="Healthprob[]" value="Depression">Depression</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem11"><input type="checkbox" id="Healthproblem11" name="Healthprob[]" value="Anxiety">Anxiety</label>
-              </div>
-              <div class = "checkboxes">
-                <label for="Healthproblem12"><input type="checkbox" id="Healthproblem12" name="Healthprob[]" value="Obesity">Obesity</label>
-              </div>
+              <label for="Healthproblem1">
+                <input type="checkbox" id="Healthproblem1" name="Healthprob[]" value="Blood Pressure">Blood Pressure</label>
+            
+              <label for="Healthproblem2">
+                <input type="checkbox" id="Healthproblem2" name="Healthprob[]" value="Diabetes">Diabetes</label>
+
+              <label for="Healthproblem3"><input type="checkbox" id="Healthproblem3" name="Healthprob[]" value="Heart Disease">Heart Disease</label>
+            
+              <label for="Healthproblem4"><input type="checkbox" id="Healthproblem4" name="Healthprob[]" value="Cancer">Cancer</label>
+            
+              <label for="Healthproblem5"><input type="checkbox" id="Healthproblem5" name="Healthprob[]" value="Asthma">Asthma</label>
+            
+              <label for="Healthproblem6"><input type="checkbox" id="Healthproblem6" name="Healthprob[]" value="Kidney Disease">Kidney Disease</label>
+            
+              <label for="Healthproblem7"><input type="checkbox" id="Healthproblem7" name="Healthprob[]" value="Liver Disease">Liver Disease</label>
+            
+              <label for="Healthproblem8"><input type="checkbox" id="Healthproblem8" name="Healthprob[]" value="Thyroid">Thyroid</label>
+            
+              <label for="Healthproblem9"><input type="checkbox" id="Healthproblem9" name="Healthprob[]" value="Arthritis">Arthritis</label>
+            
+              <label for="Healthproblem10"><input type="checkbox" id="Healthproblem10" name="Healthprob[]" value="Depression">Depression</label>
+            
+              <label for="Healthproblem11"><input type="checkbox" id="Healthproblem11" name="Healthprob[]" value="Anxiety">Anxiety</label>
+            
+              <label for="Healthproblem12"><input type="checkbox" id="Healthproblem12" name="Healthprob[]" value="Obesity">Obesity</label>
+              
             </div>    
           </div>
           <p>By creating an account you are accepting our <a href="{% url 'terms' %}">Terms and Conditions</a>.</p>
-          <button type="submit" value="SignUp">SignUp</button>
+          <button class = "signUp-button" type="submit" value="SignUp">SignUp</button>
+          <p class="para-2">
+            Already have an account? <a href="{% url 'login' %}">LogIn Here</a>
+          </p>
           </div>
-            
+          
+          
           
         </form>
       </div>
       
     </div>
-    <p class="para-2">
-      Already have an account? <a href="{% url 'login' %}">LogIn Here</a>
-    </p>
     
+    <script>
+      const button = document.querySelector(".signUp-button");
+      button.addEventListener("click", (e) => {
+        e.preventDefault;
+        button.classList.add("animate");
+        setTimeout(() => {
+          button.classList.remove("animate");
+        }, 600);
+      });
+    </script>
   </body>
 </html>

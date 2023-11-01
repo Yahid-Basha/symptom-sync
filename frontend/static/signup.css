@@ -1,35 +1,75 @@
-body{
-    background-color: white;
+body{ 
+  margin: 0;
+  padding: 0;
 }
 
 .nav{
-    background-color: #ace796;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  padding: 16px;
+  top: 0;
+  left: 0;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    background-color: #36c900;
-    border-radius: 40px;
-    padding: 0.8em;
-    font-size: 1.4em;
+.nav-start{
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
+
+.Brand-name{
+  font-family: 'Agbalumo', cursive;
+  font-family: 'Cinzel', serif;
+  font-family: 'Della Respira', serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Italiana', serif;
+  font-size: 2rem;
+}
+
+.logo{
+  border-radius: 50%;
+}
+
+.nav-end-menu{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 0.8em;
+}
+
+.nav-home, .nav-login, .nav-signUp {
+  padding: 0.6rem;
+  background-color: #ecfbe6;
+  font-size: 1.4rem;
+  color: #212b36;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  position: relative;
+}
+
+
+.nav-home:hover, .nav-login:hover, .nav-signUp:hover {
+  cursor: pointer;
+  left: -2px;
+  top: -2px;
+  box-shadow: 7px 7px black;
+}
+
+.nav-home:active, .nav-login:active, .nav-signUp:active {
+  left: 1px;
+  top: 1px;
+  box-shadow: 4px 4px black;
+}
+
 
 a{
-    text-decoration: none;
+  text-decoration: none;
+  color: rgb(24, 28, 45);
 }
-
-
-a:hover{
-    font-size: 1.05em;
-    text-shadow: 3px 2px 4px #ace796;
-}
-
-.menu:hover{
-    background-color: #34bf02;
-}
-
 
 
 
@@ -38,32 +78,30 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.8em;
-    margin: 0px auto;
+    gap: 1em;
   }
 
+h1{
+    margin: 18px 0px;
+}
 
 
 form{
     color: black;
-    border-left: 1px solid rgb(146, 146, 146);
-    padding: 3.2em;
-    font-size: 1.2em;
-
+    padding: 1em 2.4em;
+    font-size: 1.1em;
 }
 
-label{
-    margin-right: 1.4em;
-}
+
 
 
 input[type="text"],input[type="password"],input[type="email"],input[type="date"]{
-    width: 300px;
-    height: 30px;
+    width: 250px;
+    height: 20px;
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;
-    font-size: 20px;
+    font-size: 0.9em;
     background-color: #ecfbe6;
     outline-style: groove;
 }
@@ -73,12 +111,18 @@ input[type="checkbox"]{
     margin-right: 0.8rem;
 }
 
-input[type="radio"]{
-    margin-top: 30px;
-}
+
 
 input{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+input[type="radio"]{
+    margin-top: 20px;
+}
+
+input[type="checkbox"]{
+    margin-bottom: 8px;
 }
 
 
@@ -90,19 +134,19 @@ input{
 
 
 select{
-    margin-left: 9rem;
-    font-size: 1.8rem;
+    margin-left: 6rem;
+    font-size: 1.3rem;
     border-radius: 8px;
     background-color: #ecfbe6;
 }
 
 .checkbox-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    font-size: 1.4rem;
-    grid-gap: 0.9rem;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.2rem;
+    grid-gap: 0.5rem;
     background-color: #ecfbe6;
-    padding: 1em;
+    padding: 0.7em;
     border-radius: 20px;
   }
 
@@ -110,13 +154,101 @@ select{
 button{
     display: block;
     margin: 0px auto;
-    font-size: 1.6em;
-    padding:18px;
+    font-size: 1.2em;
+    padding:10px 18px;
     border-radius: 38px;
     color: white;
     background-color: black;
 }
 
+
+
+.signUp-button {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #2fa405;
+    transition: all 0.2s ease;
+  }
+  .signUp-button:active {
+    transform: scale(0.96);
+  }
+  .signUp-button:before,
+  .signUp-button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+  }
+  .signUp-button.animate::before {
+    top: -70%;
+    background-image: radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, transparent 20%, #2fa405 20%, transparent 30%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #2fa405 15%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+      10% 10%, 18% 18%;
+    animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+  }
+  @keyframes greentopBubbles {
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  .signUp-button.animate::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #2fa405 15%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%),
+      radial-gradient(circle, #2fa405 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+  }
+  @keyframes greenbottomBubbles {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+        70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+        105% 0%;
+    }
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+        110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+
+
+p{
+    text-align: center;
+}
 
 
 .para-2{
@@ -128,7 +260,13 @@ button{
         flex-direction: row;
     }
     .img-class{
-        width: 600px;
+        width: 500px;
+    }
+    form{
+        border-left: 1.5px solid rgb(162, 162, 162);
+    }
+    label{
+        margin-right: 0.8em;
     }
 }
   
@@ -136,7 +274,7 @@ button{
     .text-input-containers{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 2.2rem;
+        grid-column-gap: 2em;
     }
 
     .menu{
@@ -156,10 +294,5 @@ body {
     }
 }
 
-@media screen and (min-width: 1024px) {
-    body {
-        font-size: 20px;
-    }
-}
 
 
