@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700");
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+img {
+  max-height: 150px;
+  margin: auto;
+  display: inline-block;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+.testimonial-card {
+    display: inline-block;
+    width: 230px; /* Adjust width as needed */
+    padding: 2em; /* Increased padding */
+    border-radius: 15px; /* Softer corners */
+    margin: 30px 10px;
+    background: #f0f0f0; /* Light grey background similar to the image */
+    text-align: center; /* Centered text */
+    box-shadow: 0px 5px 20px -10px #111111;
+    position: relative;
+    transition: 0.4s;
+    color: #333; /* Dark grey text color */
+  }
+  
+  .testimonial-portrait {
+    max-height: 150px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Add space below the image */
+    border-radius: 50%; /* Make the image round */
+    display: block; /* Center the image in the card */
+    background-color: #cfcfcf; /* Background color for the image, grey as per image */
+    padding: 10px; /* Padding around the image */
+  }
+  
+  .testimonial-quote {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 0.9em; /* Smaller font size */
+    margin-bottom: 20px; /* Add some space below the quote */
+    font-style: italic; /* Italicize the quote */
+    line-height: 1.6; /* Increase line-height for better readability */
+  }
+  
+  .testimonial-author {
+    font-family: "Open Sans Condensed", "Open Sans", Helvetica, sans-serif;
+    font-size: 1.2em; /* Larger font size for the name */
+    font-weight: 700; /* Make the name bold */
+    margin: 0; /* Adjust spacing as needed */
+  }
+  
+  .testimonial-role {
+    font-size: 0.8em; /* Smaller font size for the role */
+    margin-top: 5px; /* Add some space above the role */
+    color: #777; /* Lighter color for the role */
+  }
+  
+  /* Remove card styles that are not applicable */
+  .card--normal, .card--water, .card--electric, .card--fire, .card--psychic, .card--dark, .card--grass, .card--ice, .card--fairy {
+    background: none;
+    box-shadow: none;
+  }
+  
+  /* Remove or adjust any transform or hover effects that are not needed */
+  .card:nth-child(1), .card:nth-child(2), .card:nth-child(3), .card:nth-child(4), .card:nth-child(5), .card:nth-child(6), .card:nth-child(7), .card:nth-child(8), .card:nth-child(9) {
+    transform: none;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 10px 25px -15px #000000;
+    transform: none; /* Adjust hover effect as needed */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  display: inline-block;
+  width: 230px;
+  padding: 0.6em;
+  border-radius: 15px;
+  margin: 30px 10px;
+  background: #ddd;
+  text-align: left;
+  box-shadow: 0px 5px 20px -10px #111111;
+  position: relative;
+  transition: 0.4s;
+}
+.card__caption {
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 1em;
+  position: relative;
+  border-radius: 0 0 3px 3px;
+}
+.card__image-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 1em 1em 0;
+  border-radius: 3px 3px 0 0;
+}
+.card__type {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.25em;
+  line-height: 1;
+  border-radius: 2px;
+  background: #bbbbbb;
+}
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 3px;
+}
+.card__name {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.card__stats {
+  margin: 1em 0;
+  width: 100%;
+}
+.card__stats th {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  text-align: right;
+  font-weight: 300;
+}
+.card__stats th, .card__stats td {
+  width: 50%;
+  padding: 0.25em 0.5em 0;
+}
+.card__abilities {
+  display: flex;
+  justify-content: space-between;
+}
+.card__ability {
+  margin-top: 1em;
+  flex: 1 0;
+}
+.card--normal {
+  background: linear-gradient(110deg, #FDBB2D 0%, #3A1C71 100%);
+  box-shadow: 0px 5px 20px -10px #3A1C71;
+}
+.card--normal .card__type {
+  background-color: #C08A53;
+}
+.card--water {
+  background: linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
+  box-shadow: 0px 5px 20px -10px #000851;
+}
+.card--water .card__type {
+  background-color: #1CB5E0;
+}
+.card--electric {
+  background: linear-gradient(90deg, rgb(255, 222, 0) 34%, rgb(232, 255, 153) 83%);
+}
+.card--electric .card__type {
+  background-color: #000;
+}
+.card--fire {
+  background: linear-gradient(0deg, rgb(199, 24, 0) 10%, rgb(252, 194, 69) 100%);
+}
+.card--fire .card__type {
+  background-color: rgb(199, 24, 0);
+}
+.card--psychic {
+  background: linear-gradient(140deg, rgb(255, 167, 249) 0%, rgb(255, 44, 195) 39%, rgb(255, 227, 167) 100%);
+}
+.card--psychic .card__type {
+  background: #ff2cc3;
+}
+.card--dark {
+  background: linear-gradient(20deg, rgb(25, 25, 25) 0%, rgb(16, 11, 50) 33%, rgb(92, 2, 73) 100%);
+}
+.card--dark .card__type {
+  background: #5c0249;
+}
+.card--grass {
+  background: linear-gradient(140deg, rgb(196, 218, 61) 0%, rgb(110, 127, 14) 69%, rgb(39, 80, 9) 100%);
+}
+.card--grass .card__type {
+  background: #6e7f0e;
+}
+.card--ice {
+  background: linear-gradient(230deg, rgb(202, 234, 246) 0%, rgb(160, 234, 241) 46%, rgb(111, 184, 235) 100%);
+}
+.card--ice .card__type {
+  background: #6fb8eb;
+}
+.card--fairy {
+  background: linear-gradient(45deg, rgb(255, 230, 240) 0%, rgb(255, 197, 224) 34%, rgb(255, 166, 185) 71%, rgb(255, 138, 149) 100%);
+}
+.card--fairy .card__type {
+  background: #ff8a95;
+}
+.card:nth-child(1) {
+  transform: translateY(0px) rotate(-4deg);
+}
+.card:nth-child(2) {
+  transform: translateY(0px) rotate(-4deg);
+}
+.card:nth-child(3) {
+  transform: translateY(0px) rotate(-3deg);
+}
+.card:nth-child(4) {
+  transform: translateY(0px) rotate(-5deg);
+}
+.card:nth-child(5) {
+  transform: translateY(0px) rotate(-2deg);
+}
+.card:nth-child(6) {
+  transform: translateY(0px) rotate(4deg);
+}
+.card:nth-child(7) {
+  transform: translateY(0px) rotate(-1deg);
+}
+.card:nth-child(8) {
+  transform: translateY(0px) rotate(-3deg);
+}
+.card:nth-child(9) {
+  transform: translateY(0px) rotate(-2deg);
+}
+.card:hover {
+  z-index: 5;
+  box-shadow: 0px 13px 30px -15px #000000;
+  transform: translateY(-10px);
+}
+
+/*# sourceMappingURL=homeCards.css.map */
