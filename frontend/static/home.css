@@ -3,23 +3,33 @@ body{
     padding: 0;
 }
 
+
+
+
 .nav{
-    height: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    padding: 16px;
+    padding-bottom: 30px;
     top: 0;
     left: 0;
-    margin-bottom: 20px;
     background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
 }
 
 .nav-start{
     display: flex;
     gap: 15px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 4vw;
+    min-width: 120px;
 }
 
 .Brand-name{
@@ -28,7 +38,7 @@ body{
     font-family: 'Della Respira', serif;
     font-family: 'Inter', sans-serif;
     font-family: 'Italiana', serif;
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .logo{
@@ -37,16 +47,17 @@ body{
 
 .nav-end-menu{
     display: flex;
-    gap: 15px;
+    gap: 30px;
     justify-content: space-between;
-    width: 300px;
-    padding: 0.8em;
+    min-width: 80px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .nav-home, .nav-login, .nav-signUp {
     padding: 0.6rem;
     background: #f6edff;
-    font-size: 1.4rem;
+    font-size: 3rem;
     color: #212b36;
     border: 2px solid black;
     border-radius: 5px;
@@ -90,10 +101,11 @@ h1{
 
 
 .Main {
+    padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(1,fr);
     grid-gap: 10px;
-    background-color: #c4bbcd;
+    background-color: #f6edff;
 }
 
 .text1, .text2 {
@@ -102,12 +114,16 @@ h1{
     align-items: center;
     text-align: center;
     padding: 20px 0px;
+    font-family: 'satisfy', sans-serif;
+    font-size: 4rem;
 }
 
 
 .home-img1, .home-img2{
-    width: 500px; 
-    height: 500px;
+    min-width: 200px;
+    min-height: 200px;
+    width: 70vw; 
+    height: 70vw;
     margin: 0px auto;
 }
 
@@ -120,7 +136,98 @@ h1{
     align-items: start;
 }
 
+
+.second-main{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-section {
+    background-color: #fff8e1; 
+    max-width: 800px;
+    padding: 30px;
+    margin: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.about-heading {
+    color: #005a4c; /* A rich, darker color for the heading */
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Slightly larger font size */
+}
+
+.about-content {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.8;
+    text-align: left; 
+    font-size: 1rem; 
+}
+
+
+.call-to-action {
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #d9e4f5; 
+}
+
+.cta-heading {
+    font-family: 'Satisfy', cursive;
+    color: #212b36;
+    margin-bottom: 10px;
+}
+
+.cta-content {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #45a049; 
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+
 @media(min-width: 1100px){
+    .nav{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .Brand-name{
+        font-size: clamp(2.2rem, 2vw, 5rem);
+    }
+
+    .nav-home, .nav-login, .nav-signUp{
+        font-size: clamp(1.4rem, 2vw, 2.5rem);
+    }
+
     .Main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -130,6 +237,27 @@ h1{
         height: 500px;
         padding: 20px;
     }
+
+    .text1, .text2{
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .second-main{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-section{
+        margin: 40px 0px;
+        margin-left: 20px;
+    }
+
+    .call-to-action{
+        margin: 20px 0px;
+        margin-right: 20px;
+    }
+
 }
   
 @media(min-width:1400px){
@@ -155,14 +283,29 @@ h1{
         margin-top: 20px;
     }
 
+    .second-main{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-section{
+        margin: 40px 0px;
+        margin-left: 20px;
+    }
+
+    .call-to-action{
+        margin: 20px 0px;
+        margin-right: 20px;
+    }
+
 }
 
-/* Default font size */
+
 body {
     font-size: 16px;
 }
 
-/* Increase font size for larger screens */
 @media screen and (min-width: 768px) {
     body {
         font-size: 18px;

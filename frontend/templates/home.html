@@ -9,13 +9,13 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&family=Satisfy&family=Stylish&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <div class="nav">
         <div class="nav-start">
-            <img class="logo" src="{% static 'logo.png' %}" width="50px" alt="logo">
+            <img class="logo" src="{% static 'logo.png' %}" width="90vw" alt="logo">
             <h2 class="Brand-name">Indian Health Network</h2>
         </div>
          
@@ -29,14 +29,31 @@
     <div class="Main">
         <img class = "home-img1 gItem" alt="picture of two people reaching out to each other" src="{% static 'home-image1.png' %}">
         <div class="text1 gItem">
-            You don't have to struggle in Silence.<br> You are not Alone in this.
+            You don't have to fight alone.<br> We're here to help you.
         </div>
         <img class="home-img2 gItem" alt="community image" src="{% static 'home-image2.png' %}" >
         <div class="text2 gItem">
-            You can be un-silent. You can live well with <br>any health condition, as long as you <br>open up to somebody about it.
+            You can be heard.<br> You can live well with any health condition, as long as you <br>open up to somebody about it.
         </div>
         
     </div>
+    <div class="second-main">
+        <div class="about-section">
+            <h2 class="about-heading">Who We Are</h2>
+            <p class="about-content">
+                Welcome to the <strong>Indian Health Network</strong> — a compassionate community dedicated to connecting individuals across India dealing with similar health challenges. Our mission is to provide a supportive space where people can share experiences, find resources, and draw strength from others facing comparable journeys.
+            </p>
+            <p class="about-content">
+                Founded on the belief that no one should navigate their health struggles alone, our network offers a platform for mutual support, education, and advocacy. From chronic illnesses to rare diseases, we embrace all stories and struggles, fostering an environment of understanding and empowerment.
+            </p>
+        </div>
+        <div class="call-to-action">
+            <h3 class="cta-heading">Join Our Community Today</h3>
+            <p class="cta-content">Are you looking for a place to connect, learn, and grow with others who truly understand what you're going through? Become a part of the Indian Health Network today.</p>
+            <a href="{% url 'signup' %}" class="cta-button">Sign Up Now</a>
+        </div>
+    </div>
+    
 
 </body>
 </html>
