@@ -1,4 +1,7 @@
 {
     "liveServer.settings.port": 5501,
-    "livePreview.defaultPreviewPath": "/frontend/templates/signup.html"
+    "livePreview.defaultPreviewPath": "/frontend/templates/signup.html",
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }

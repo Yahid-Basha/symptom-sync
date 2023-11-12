@@ -15,7 +15,7 @@
     
     <div class="nav">
         <div class="nav-start">
-            <img class="logo" src="{% static 'logo.png' %}" width="90vw" alt="logo">
+            <img class="logo" src="{% static 'logo.png' %}" alt="logo">
             <h2 class="Brand-name">Indian Health Network</h2>
         </div>
          
@@ -47,11 +47,19 @@
                 Founded on the belief that no one should navigate their health struggles alone, our network offers a platform for mutual support, education, and advocacy. From chronic illnesses to rare diseases, we embrace all stories and struggles, fostering an environment of understanding and empowerment.
             </p>
         </div>
-        <div class="call-to-action">
-            <h3 class="cta-heading">Join Our Community Today</h3>
-            <p class="cta-content">Are you looking for a place to connect, learn, and grow with others who truly understand what you're going through? Become a part of the Indian Health Network today.</p>
-            <a href="{% url 'signup' %}" class="cta-button">Sign Up Now</a>
+        <div class="cta-section">
+            <div class="call-to-action">
+                <h3 class="cta-heading">Join Our Community Today</h3>
+                <p class="cta-content">Are you looking for a place to connect, learn, and grow with others who truly understand what you're going through? Become a part of the Indian Health Network today.</p>
+                <a href="{% url 'signup' %}" class="cta-button">Sign Up Now</a>
+            </div>
+            <div >
+                <img src="{% static 'call-out-image.png' %}" alt="community image" class="call-out-image">
+            </div>
+            
         </div>
+        
+        
     </div>
     
 

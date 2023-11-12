@@ -4,15 +4,13 @@ body{
 }
 
 
-
-
 .nav{
     display: flex;
     flex-direction: column;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    padding-bottom: 30px;
     top: 0;
     left: 0;
     background-color: white;
@@ -24,31 +22,26 @@ body{
     display: flex;
     gap: 15px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .logo{
-    width: 4vw;
-    min-width: 120px;
+    width: 5vw;
+    border-radius: 50%;
 }
 
 .Brand-name{
-    font-family: 'Agbalumo', cursive;
-    font-family: 'Cinzel', serif;
-    font-family: 'Della Respira', serif;
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Cinzel', serif; */
+    /* font-family: 'Della Respira', serif; */
     font-family: 'Italiana', serif;
-    font-size: 4rem;
-}
-
-.logo{
-    border-radius: 50%;
+    font-size: 3.5rem;
+    margin: 0px;
 }
 
 .nav-end-menu{
     display: flex;
-    gap: 30px;
-    justify-content: space-between;
+    gap: 60px;
+    justify-content: center;
     min-width: 80px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -60,8 +53,8 @@ body{
     font-size: 3rem;
     color: #212b36;
     border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 5px 5px black;
+    border-radius: 8px;
+    box-shadow: 8px 8px black;
     position: relative;
   }
   
@@ -101,40 +94,62 @@ h1{
 
 
 .Main {
-    padding-top: 50px;
+    padding: 50px 0px;
     display: grid;
     grid-template-columns: repeat(1,fr);
     grid-gap: 10px;
     background-color: #f6edff;
 }
 
+
+
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('fonts/Bison-Bold(PersonalUse).ttf') format('truetype'); 
+    font-weight: 300; /* Optional: Define the weight */
+    font-style: normal; /* Optional: Define the style */
+    font-display: swap; /* This helps in faster font rendering */
+}
+
+@font-face {
+    font-family: 'soul';
+    src: url('/fonts/soul billani/SoulBillani.otf') format('opentype'); 
+    font-weight: normal; /* Optional: Define the weight */
+    font-style: normal; /* Optional: Define the style */
+    font-display: swap; /* This helps in faster font rendering */
+}
+
+
+
+
 .text1, .text2 {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px 0px;
-    font-family: 'satisfy', sans-serif;
+    padding: 20px 40px;
+    /* font-family: 'satisfy', cursive; */
+    font-family: 'Della Respira', serif;
+    /* font-family: 'Cinzel', serif; */
     font-size: 4rem;
+    text-wrap: balance;
 }
 
 
 .home-img1, .home-img2{
-    min-width: 200px;
-    min-height: 200px;
-    width: 70vw; 
-    height: 70vw;
+    width: 600px; 
+    height: 600px;
     margin: 0px auto;
 }
 
-
+/* 
 .text{
     font-size: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-}
+} */
 
 
 .second-main{
@@ -143,69 +158,122 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .about-section {
-    background-color: #fff8e1; 
+    background-color: #f7f5ff9e; 
     max-width: 800px;
     padding: 30px;
     margin: 40px 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    
 }
 
 .about-heading {
-    color: #005a4c; /* A rich, darker color for the heading */
-    font-family: 'Cinzel', serif;
+    color: #5235a2;
+    font-family: 'Italiana', serif;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2rem; /* Slightly larger font size */
+    font-size: 2rem;
+    font-weight: 600; 
+    line-height: 1.3;
 }
 
 .about-content {
+    color: #5d4037;
     font-family: 'Inter', sans-serif;
-    color: #333;
     line-height: 1.8;
     text-align: left; 
     font-size: 1rem; 
+    line-height: 1.6;
 }
 
 
+
+
+.cta-section{
+    position: relative;
+    width:90%;
+}
+
+.call-out-image{
+    z-index: 1; 
+    width:100%;
+}
+
 .call-to-action {
-    max-width: 350px;
+    width: 440px;
+    height:230px;
     text-align: center;
     padding: 20px;
     margin: 20px 0;
-    background-color: #d9e4f5; 
+    background-color: #fdf6e3;
+    position: absolute; 
+    top: 120px;
+    right:200px;
+    z-index: 2;
 }
 
 .cta-heading {
     font-family: 'Satisfy', cursive;
     color: #212b36;
     margin-bottom: 10px;
+    font-weight: 600; 
+    line-height: 1.3;
 }
 
 .cta-content {
     font-family: 'Inter', sans-serif;
     color: #333;
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .cta-button {
-    background-color: #4CAF50;
+    background-color: #cb4335; 
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s, box-shadow 0.3s;
+    
 }
 
 .cta-button:hover {
     background-color: #45a049; 
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+}
+
+
+.about-section:hover, .call-to-action:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Slightly larger shadow on hover for a 'lifted' effect */
+}
+
+
+
+@media(max-width: 1100px){
+    .nav-end-menu{
+        width: 80%;
+    }
+
+    .nav-start{
+        width: 85%;
+    }
+
+    .nav{
+        padding-bottom: 30px;
+    }
+    .logo{
+        width: 120px;
+    }
 }
 
 
@@ -217,29 +285,47 @@ h1{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 8px 20px;
     }
 
     .Brand-name{
-        font-size: clamp(2.2rem, 2vw, 5rem);
+        font-size: clamp(1.6rem, 2vw, 3rem);
     }
 
     .nav-home, .nav-login, .nav-signUp{
-        font-size: clamp(1.4rem, 2vw, 2.5rem);
+        font-size: clamp(1rem, 1vw, 1.5rem);
+        padding: 0.3rem;
+        border-radius: 5px;
+        box-shadow: 5px 5px black;
     }
-
     .Main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "home-img1 text1" "text2 home-img2";
     }
-    .home-img1, .home-img2{
-        width: 500px; 
-        height: 500px;
-        padding: 20px;
+    .home-img1{
+        grid-area: home-img1;
+    }
+    .text1{
+        grid-area: text1;
+    }
+    .text2{
+        grid-area: text2;
+    }
+    .home-img2{
+        grid-area: home-img2;
     }
 
+    .home-img1, .home-img2{
+        width: 400px; 
+        height: 400px;
+        margin: 0px auto;
+    }
+
+
     .text1, .text2{
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        font-size: clamp(1rem, 4vw, 2rem);
+        padding: 20px 80px;
     }
 
     .second-main{
@@ -261,7 +347,7 @@ h1{
 }
   
 @media(min-width:1400px){
-    .Main {
+    /* .Main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
@@ -271,17 +357,7 @@ h1{
     .gItem:nth-child(1),
     .gItem:nth-child(3) {
     grid-row: span 2;
-    }
-
-    .home-img1{
-        padding: 20px;
-        padding-left: 40px;
-    }
-    
-    .home-img2{
-        padding: 40px 20px;
-        margin-top: 20px;
-    }
+    } */
 
     .second-main{
         flex-direction: row;
@@ -299,11 +375,6 @@ h1{
         margin-right: 20px;
     }
 
-}
-
-
-body {
-    font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
