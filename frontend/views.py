@@ -29,6 +29,9 @@ storagea=firebase.storage()
 def home(request):
     return render(request,'home.html')
 
+
+
+
 #Login Page View
 def login(request):
     if request.method=='POST':

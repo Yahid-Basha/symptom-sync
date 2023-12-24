@@ -5,7 +5,8 @@
     <title>Home | Indian Health Network</title>
     <link rel="icon" href="frontend\static\logo.png" type="image">
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'homeCards.css' %}"> -->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'homeCards.css' %}">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,550 +77,149 @@
 
     <div id="cards">  
 
-
-        <div class="card testimonial-card card--normal">
-            <img src="path_to_image" alt="John Doe" class="card__portrait testimonial-portrait card__image-container">
-            <h3 class="card__type">
-                normal
-            </h3>
-            <blockquote class="card__quote testimonial-quote">"This service has improved my life tremendously. Highly recommended!"</blockquote>
-            <h3 class="card__author testimonial-author">John Doe</h3>
-            <p class="card__role testimonial-role">Software Engineer</p>
+      <figure class="card card--normal">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
         </div>
         
-
-        <figure class="card card--normal">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png" alt="Eevee" class="card__image">   
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Anjali Kumar
+          </h2>
+          <p>Navigating through my diabetes diagnosis was overwhelming until I found the Indian Health Network. The resources and patient stories on the site have been a huge comfort. I feel less alone and more informed.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Diabetes
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Chennai, Tamil Nadu
+            </h4>
           </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Eevee</h1>
-        
-            <h3 class="card__type">
-              normal
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>55</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>55</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>50</td>
-              </tr>
-        
-              
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Run Away
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Anticipation
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--water">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/f/fd/134Vaporeon.png/1200px-134Vaporeon.png" alt="Vaporeon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Vaporeon</h1>
-        
-            <h3 class="card__type">
-              water
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>130</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>65</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>60</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>110</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>65</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Absorb
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Hydration
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--electric">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/b/bb/135Jolteon.png/1200px-135Jolteon.png" alt="Jolteon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Jolteon</h1>
-        
-            <h3 class="card__type">
-              electric
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>65</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>60</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>110</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>130</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Volt Absorb
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Quick Feet
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--fire">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/d/dd/136Flareon.png/1200px-136Flareon.png" alt="Flareon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Flareon</h1>
-        
-            <h3 class="card__type">
-              fire
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>130</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>60</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>110</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>65</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Flash Fire
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Guts
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--psychic">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/a/a7/196Espeon.png/1200px-196Espeon.png" alt="Espeon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Espeon</h1>
-        
-            <h3 class="card__type">
-              psychic
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>65</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>60</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>130</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>110</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Synchronize
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Magic Bounce
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--dark">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/3/3d/197Umbreon.png/600px-197Umbreon.png" alt="Umbreon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Umbreon</h1>
-        
-            <h3 class="card__type">
-              dark
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>65</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>110</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>60</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>130</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>65</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Synchronize
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Inner Focus
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--grass">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/f/f5/470Leafeon.png/600px-470Leafeon.png" alt="Leafeon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Leafeon</h1>
-        
-            <h3 class="card__type">
-              grass
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>110</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>130</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>60</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>95</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Leaf Guard
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Chlorophyll
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--ice">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/2/23/471Glaceon.png/600px-471Glaceon.png" alt="Glaceon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Glaceon</h1>
-        
-            <h3 class="card__type">
-              ice
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>65</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>60</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>110</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>130</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>65</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Snow Cloak
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Ice Body
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        
-        <figure class="card card--fairy">
-          <div class="card__image-container">
-            <img src="https://cdn.bulbagarden.net/upload/thumb/e/e8/700Sylveon.png/600px-700Sylveon.png" alt="Sylveon" class="card__image">   
-          </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">Sylveon</h1>
-        
-            <h3 class="card__type">
-              fairy
-            </h3>
-        
-            <table class="card__stats">
-              <tbody><tr>
-                <th>HP</th>
-                <td>95</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>65</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>65</td>
-              </tr>
-        
-              <tr>
-                <th>Special Attack</th>
-                <td>110</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>130</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>60</td>
-              </tr>
-            </tbody></table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                Cute Charm
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                Pixilate
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
+        </figcaption>
+      </figure>
+      
+      <figure class="card card--water">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
         </div>
         
-        
-        <script id="card-template" type="text/x-handlebars-template">
-        <figure class="card card--{{type}}">
-          <div class="card__image-container">
-            <img src="{{imageAddress}}" alt="{{name}}" class="card__image">   
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Rajesh Singh
+          </h2>
+          <p>The Indian Health Network’s mental health support group has been a safe haven for me. Connecting with others who understand what I’m going through has made all the difference.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Anxiety & Depression
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Pune, Maharashtra
+            </h4>
           </div>
-          
-          <figcaption class="card__caption">
-            <h1 class="card__name">{{name}}</h1>
+        </figcaption>
+      </figure>
+      
+      
+      <figure class="card card--dark">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
+        </div>
         
-            <h3 class="card__type">e
-              {{type}}
-            </h3>
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Divya Goyal
+          </h2>
+          <p>As a breast cancer survivor, the journey has been tough. The inspiring stories and the latest research updates I found here have given me hope and strength to fight every day.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Breast Cancer
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Kolkata, West Bengal
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+
+      <figure class="card card--ice">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
+        </div>
         
-            <table class="card__stats">
-              <tr>
-                <th>HP</th>
-                <td>{{hp}}</td>
-              </tr>
-              <tr>
-                <th>Attack</th>
-                <td>{{attack}}</td>
-              </tr>
-              
-              <tr>
-                <th>Defense</th>
-                <td>{{defense}}</td>
-              </tr>
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Amit Patel
+          </h2>
+          <p>I was lost dealing with my son's autism, but the Indian Health Network provided me with the guidance I desperately needed. The community has been a pillar of support for my family.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Autism Spectrum Disorder
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Surat, Gujarat
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure class="card card--grass">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
+        </div>
         
-              <tr>
-                <th>Special Attack</th>
-                <td>{{spAttack}}</td>
-              </tr>
-              <tr>
-                <th>Special Defense</th>
-                <td>{{spDefense}}</td>
-              </tr>
-              <tr>
-                <th>Speed</th>  
-                <td>{{speed}}</td>
-              </tr>
-            </table>
-            
-            <div class="card__abilities">
-              <h4 class="card__ability">
-                <span class="card__label">Ability</span>
-                {{ability1}}
-              </h4>
-              <h4 class="card__ability">
-                <span class="card__label">Hidden Ability</span>
-                {{ability2}}
-              </h4>
-            </div>
-          </figcaption>
-        </figure>
-        </script>
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Sunita Rao
+          </h2>
+          <p>Living with rheumatoid arthritis is a daily challenge. The tips and personal management strategies I've learned from the contributions on the site have helped me manage my condition much better.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Rheumatoid Arthritis
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Bengaluru, Karnataka
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+      
+      
+      <figure class="card card--fairy">
+        <div class="card__image-container">
+          <img src="user-icon.png" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h2 class="card__name">
+            Prakash Menon
+          </h2>
+          <p>Finding reliable information about managing hypertension in India was hard. Thanks to the Indian Health Network, I've now got a plethora of resources and dietary advice that suits my lifestyle.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Hypertension
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Kochi, Kerala
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      </div>
 
 
 
