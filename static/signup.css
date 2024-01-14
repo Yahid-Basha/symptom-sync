@@ -4,55 +4,50 @@ body{
 }
 
 .nav{
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
   justify-content: space-between;
   align-items: center;
   position: sticky;
+  padding: 16px;
   top: 0;
   left: 0;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  z-index: 1000; 
 }
 
 .nav-start{
   display: flex;
   gap: 15px;
   align-items: center;
-  justify-content: center;
-}
-
-.logo{
-  width: 5vw;
-  border-radius: 50%;
 }
 
 .Brand-name{
+  font-family: 'Agbalumo', cursive;
+  font-family: 'Cinzel', serif;
+  font-family: 'Della Respira', serif;
+  font-family: 'Inter', sans-serif;
   font-family: 'Italiana', serif;
-  font-size: 3.5rem;
-  margin: 0px;
+  font-size: 2rem;
+}
+
+.logo{
+  border-radius: 50%;
 }
 
 .nav-end-menu{
   display: flex;
-  gap: 60px;
-  justify-content: center;
-  min-width: 80px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  justify-content: space-between;
+  width: 300px;
+  padding: 0.8em;
 }
 
 .nav-home, .nav-login, .nav-signUp {
   padding: 0.6rem;
-  background: #560e9f;
-  font-size: 3rem;
+  background-color: #ecfbe6;
+  font-size: 1.4rem;
   color: #212b36;
   border: 2px solid black;
-  border-radius: 8px;
-  box-shadow: 8px 8px black;
-  position: relative;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
 }
 
 
@@ -74,6 +69,7 @@ a{
   text-decoration: none;
   color: rgb(24, 28, 45);
 }
+
 
 
 .signup-container{
