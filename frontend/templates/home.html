@@ -5,17 +5,19 @@
     <title>Home | Indian Health Network</title>
     <link rel="icon" href="frontend\static\logo.png" type="image">
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'homeCards.css' %}"> -->
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&family=Satisfy&family=Stylish&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <div class="nav">
         <div class="nav-start">
-            <img class="logo" src="{% static 'logo.png' %}" width="50px" alt="logo">
+            <img class="logo" src="{% static 'logo.png' %}" alt="logo">
             <h2 class="Brand-name">Indian Health Network</h2>
         </div>
          
@@ -29,14 +31,223 @@
     <div class="Main">
         <img class = "home-img1 gItem" alt="picture of two people reaching out to each other" src="{% static 'home-image1.png' %}">
         <div class="text1 gItem">
-            You don't have to struggle in Silence.<br> You are not Alone in this.
+            You don't have to fight alone.<br> We're here to help you.
         </div>
         <img class="home-img2 gItem" alt="community image" src="{% static 'home-image2.png' %}" >
         <div class="text2 gItem">
-            You can be un-silent. You can live well with <br>any health condition, as long as you <br>open up to somebody about it.
+            You can be heard.<br> You can live well with any health condition, as long as you <br>open up to somebody about it.
         </div>
         
     </div>
+    <div class="second-main">
+        <div class="about-section">
+            <h2 class="about-heading">Who We Are</h2>
+            <p class="about-content">
+                Welcome to the <strong>Indian Health Network</strong> — a compassionate community dedicated to connecting individuals across India dealing with similar health challenges. Our mission is to provide a supportive space where people can share experiences, find resources, and draw strength from others facing comparable journeys.
+            </p>
+            <p class="about-content">
+                Founded on the belief that no one should navigate their health struggles alone, our network offers a platform for mutual support, education, and advocacy. From chronic illnesses to rare diseases, we embrace all stories and struggles, fostering an environment of understanding and empowerment.
+            </p>
+        </div>
+        <div class="cta-section">
+            <div class="call-to-action">
+                <h3 class="cta-heading">Join Our Community Today</h3>
+                <p class="cta-content">Are you looking for a place to connect, learn, and grow with others who truly understand what you're going through? Become a part of the Indian Health Network today.</p>
+                <a href="{% url 'signup' %}" class="cta-button">Sign Up Now</a>
+            </div>
+            <div class="call-out-image">
+                <center><img src="{% static 'call-out-image.png' %}" alt="community image" class="call-out-image"></center>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+
+
+
+
+
+    <!-- cards -->
+
+    <div class="user-feedback-section">
+      <h2 class="user-feedback-heading">Hear It From Our Users</h2>
+      <p class="user-feedback-content">
+          Discover the transformative journeys of individuals who found support and inspiration through the Indian Health Network. 
+          Read their stories and learn how our community is making a positive impact on their lives.
+      </p>
+    </div>
+
+    <div id="cards">  
+
+      <figure class="card card--normal">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card1_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Anjali Kumar
+          </h3>
+          <p>Navigating through my diabetes diagnosis was overwhelming until I found the Indian Health Network. The resources and patient stories on the site have been a huge comfort. I feel less alone and more informed.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Diabetes
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Chennai, Tamil Nadu
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+      <figure class="card card--water">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card2_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Rajesh Singh
+          </h3>
+          <p>The Indian Health Network’s mental health support group has been a safe haven for me. Connecting with others who understand what I’m going through has made all the difference.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Anxiety & Depression
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Pune, Maharashtra
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+      
+      <figure class="card card--dark">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card4_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Divya Goyal
+          </h3>
+          <p>As a breast cancer survivor, the journey has been tough. The inspiring stories and the latest research updates I found here have given me hope and strength to fight every day.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Breast Cancer
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Kolkata, West Bengal
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+
+      <figure class="card card--ice">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card3_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Amit Patel
+          </h3>
+          <p>I was lost dealing with my son's autism, but the Indian Health Network provided me with the guidance I desperately needed. The community has been a pillar of support for my family.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Autism Spectrum Disorder
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Surat, Gujarat
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure class="card card--grass">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card5_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Sunita Rao
+          </h3>
+          <p>Living with rheumatoid arthritis is a daily challenge. The tips and personal management strategies I've learned from the contributions on the site have helped me manage my condition much better.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Rheumatoid Arthritis
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Bengaluru, Karnataka
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      
+      
+      
+      <figure class="card card--fairy">
+        <div class="card__image-container">
+          <img src="frontend\static\feedback_card6_img.jpeg" alt="feedback1" class="card__image">   
+        </div>
+        
+        <figcaption class="card__caption">
+          <h3 class="card__name">
+            Prakash Menon
+          </h3>
+          <p>Finding reliable information about managing hypertension in India was hard. Thanks to the Indian Health Network, I've now got a plethora of resources and dietary advice that suits my lifestyle.</p>
+          <div class="card__abilities">
+            <h4 class="card__ability">
+              <span class="card__label">Health Condition</span>
+              Hypertension
+            </h4>
+            <h4 class="card__ability">
+              <span class="card__label">LOCATION</span>
+              Kochi, Kerala
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+      </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-social">
+          <p>Follow Us</p>
+          <!-- Add your social media icons or links here -->
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="frontend\static\insta-icon-img.png" alt="Social Icon 1"></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="frontend\static\twitter-icon-img.png" alt="Social Icon 2"></a>
+          <!-- Add more social icons as needed -->
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Indian Health Network. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+    <script src="{% static 'js/homeJS.js' %}"></script>
+
+    
 
 </body>
 </html>

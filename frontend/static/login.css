@@ -3,6 +3,88 @@
     
     margin-top: 150px;
 }
+
+
+
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+  }
+  
+  .nav-start{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo{
+    width: 5vw;
+    border-radius: 50%;
+  }
+  
+  .Brand-name{
+    /* font-family: 'Cinzel', serif; */
+    /* font-family: 'Della Respira', serif; */
+    font-family: 'Italiana', serif;
+    font-size: 3.5rem;
+    margin: 0px;
+  }
+  
+  .nav-end-menu{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    min-width: 80px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .nav-home, .nav-login, .nav-signUp {
+    padding: 0.6rem;
+    background: #ecfbe6;
+    font-size: 3rem;
+    color: #212b36;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 8px 8px black;
+    position: relative;
+  }
+  
+  
+  .nav-home:hover, .nav-login:hover, .nav-signUp:hover {
+    cursor: pointer;
+    left: -2px;
+    top: -2px;
+    box-shadow: 7px 7px black;
+  }
+  
+  .nav-home:active, .nav-login:active, .nav-signUp:active {
+    left: 1px;
+    top: 1px;
+    box-shadow: 4px 4px black;
+  }
+  
+  
+  a{
+    text-decoration: none;
+    color: rgb(24, 28, 45);
+  }
+  
+
+
+
+
 form{
     border: 1px solid #fff;
     margin: auto;
@@ -63,4 +145,54 @@ button{
     color: #44ff00;
     font-weight: bold;
     transition: 0.4s ease-in-out;
+}
+
+
+@media(max-width: 1100px){
+    .nav-end-menu{
+        width: 80%;
+    }
+  
+    .nav-start{
+        width: 85%;
+    }
+  
+    .nav{
+        padding-bottom: 30px;
+    }
+    .logo{
+        width: 120px;
+    }
+  }
+
+  
+  
+@media(min-width: 1100px){
+    .signup-container{
+        flex-direction: row;
+    }
+    .img-class{
+        width: 500px;
+    }
+    label{
+        margin-right: 0.8em;
+    }
+
+    .nav{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+  }
+
+  .Brand-name{
+      font-size: clamp(1.6rem, 2vw, 3rem);
+  }
+
+  .nav-home, .nav-login, .nav-signUp{
+      font-size: clamp(1rem, 1vw, 1.5rem);
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 5px black;
+  }
 }

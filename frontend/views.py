@@ -29,6 +29,9 @@ storagea=firebase.storage()
 def home(request):
     return render(request,'home.html')
 
+
+
+
 #Login Page View
 def login(request):
     if request.method=='POST':
@@ -133,6 +136,7 @@ def profile(request):
 def Data(request):
     if request.method=='POST':
         #get data from the form
+        print("=============> Monnnnnnnnnn")
         Username=request.POST.get('username')
         readings=request.POST.get('readings')
         value=request.POST.get('value')
