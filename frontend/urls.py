@@ -35,4 +35,5 @@ urlpatterns = [
     path('Data',views.Data,name='Data'),
     path('storage',views.storage,name='storage'),
     path('refresh',views.refresh_clusters,name='refresh'),
+    path('visualize',views.visualize,name='visualize'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

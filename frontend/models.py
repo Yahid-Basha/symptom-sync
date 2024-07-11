@@ -27,5 +27,13 @@ class User():
     cluster_users: list
     cluster_emails: list
 
-class Image():
-    img : list
+
+class Chart():
+    dates_bp: list
+    values_bp: list
+    dates_bs: list
+    values_bs: list
+    dates_hr: list
+    values_hr: list
+    dates_weight: list
+    values_weight: list

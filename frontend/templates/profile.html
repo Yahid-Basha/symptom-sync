@@ -71,6 +71,7 @@
                             <input type="submit" name="refresh" value="Refresh">
                         </form>
                         <a href="">Edit Profile</a>
+                         
                         <!-- <button class="button"><span>Daily Analysis</span></button> -->
                     </div>
                 </div>
@@ -132,6 +133,11 @@
                         <input type="submit" value="Update">
                         <br>
                     </form>
+                    <form action="/visualize" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="username" value="{{usera.Username}}"><br>
+                                <input type="submit" name="Visualize" value="Visualize">
+                            </form>
                 </div>
             </div>
 
