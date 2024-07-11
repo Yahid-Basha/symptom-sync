@@ -1,114 +1,183 @@
-.login-box{
-    color: wheat;
-    
-    margin-top: 150px;
+body, p{
+  padding: 0px;
+  margin: 0px;
+}
+
+@font-face {
+  font-family: 'Bison-Bold';
+  src: url('fonts/Bison-Bold(PersonalUse).ttf') format('truetype'); 
+  font-weight: 300; 
+  font-style: normal; 
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'soul';
+  src: url('/fonts/soul billani/SoulBillani.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal; 
+  font-display: swap; 
 }
 
 
 
 
 .nav{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; 
   
-  .nav-start{
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo{
-    width: 5vw;
-    border-radius: 50%;
-  }
-  
-  .Brand-name{
-    /* font-family: 'Cinzel', serif; */
-    /* font-family: 'Della Respira', serif; */
-    font-family: 'Italiana', serif;
-    font-size: 3.5rem;
-    margin: 0px;
-  }
-  
-  .nav-end-menu{
-    display: flex;
-    gap: 60px;
-    justify-content: center;
-    min-width: 80px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-  }
-  
-  .nav-home, .nav-login, .nav-signUp {
-    padding: 0.6rem;
-    background: #ecfbe6;
-    font-size: 3rem;
-    color: #212b36;
-    border: 2px solid black;
-    border-radius: 8px;
-    box-shadow: 8px 8px black;
-    position: relative;
-  }
-  
-  
-  .nav-home:hover, .nav-login:hover, .nav-signUp:hover {
-    cursor: pointer;
-    left: -2px;
-    top: -2px;
-    box-shadow: 7px 7px black;
-  }
-  
-  .nav-home:active, .nav-login:active, .nav-signUp:active {
-    left: 1px;
-    top: 1px;
-    box-shadow: 4px 4px black;
-  }
-  
-  
-  a{
-    text-decoration: none;
-    color: rgb(24, 28, 45);
-  }
-  
+}
+
+.nav-start{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo{
+  width: 5vw;
+  border-radius: 50%;
+}
+
+.Brand-name{
+  /* font-family: 'Cinzel', serif; */
+  /* font-family: 'Della Respira', serif; */
+  font-family: 'Italiana', serif;
+  font-size: 3.5rem;
+  margin: 0px;
+}
+
+.nav-end-menu{
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  min-width: 80px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.nav-home, .nav-login, .nav-signUp {
+  padding: 0.6rem;
+  background: #f6edff;
+  font-size: 3rem;
+  color: #212b36;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-shadow: 8px 8px black;
+  position: relative;
+}
 
 
+.nav-home:hover, .nav-login:hover, .nav-signUp:hover {
+  cursor: pointer;
+  left: -2px;
+  top: -2px;
+  box-shadow: 7px 7px black;
+}
+
+.nav-home:active, .nav-login:active, .nav-signUp:active {
+  left: 1px;
+  top: 1px;
+  box-shadow: 4px 4px black;
+}
 
 
-form{
-    border: 1px solid #fff;
-    margin: auto;
-    width: 350px;
-    background-color: rgb(43, 43, 51);
-    padding: 10px;
-    border-radius: 10px;
+a{
+  text-decoration: none;
+  color: rgb(24, 28, 45);
+}
+
+
+h1{
+  margin: 18px 0px;
+}
+
+
+.container{
+    margin-top: 150px;
+    background: linear-gradient(to bottom, rgb(187 165 205 / 64%), rgb(229 214 241 / 50%), rgb(219 198 232 / 50%)), url(https://www.transparenttextures.com/patterns/cloudy-day.png);
+    background-blend-mode: overlay;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 120px;
+    /* justify-content: center; */
     align-items: center;
 }
 
+.login-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.para-1{
+    margin-top: 10px;
+  }
+  
+.one{
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+.two{
+  font-size: 20px;
+  font-family: 'Della Respira', serif;
+  text-align: center;
+}
+
+.para-2{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+  font-family: 'Della Respira', serif;
+  /* color: #fff; */
+}
+
+.para-2 a{
+  color: #58db29;
+  font-family: 'Inter', sans-serif;
+}
+
+form{
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #585a6f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
 form input{
+    font-family: 'Inter', sans-serif;
     width: 300px;
     height: 30px;
     margin: 10px;
     border-radius: 5px;
     border: none;
     padding: 5px;
-    font-size: 18px ;
+    font-size: 14px ;
+    outline: none;
 }
 
 form label{
+    font-family: 'Italiana', serif;
     font-size: 20px;
     margin-top: 20px;
 }
@@ -116,36 +185,24 @@ form label{
 button{
     width: 100px;
     height: 40px;
-    background: #44ff00;
-    border: 2px solid #44ff00;
-    margin-top: 13px;
+    background: #58db29;
+    border: 2px solid #58db29;
     color: #1b1919;
     font-size: 15px;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-.para-2{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 15px;
-    color: #fff;
-
-}
-.para-1{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 30px;
-    color: #fff;
-
+button:hover {
+  background: #4ac219;
+  border-color: #4ac219;
 }
 
-.para-2 a{
-    text-decoration: none;
-    color: #44ff00;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
+button:active {
+  background: #3da10f; 
+  border-color: #3da10f;
 }
+
 
 
 @media(max-width: 1100px){
@@ -163,6 +220,42 @@ button{
     .logo{
         width: 120px;
     }
+
+    .container{
+      /* height: 800px; */
+    }
+    
+    .login-bg {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .login-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      align-items: center;
+    }
+
+    form{
+      width: 60%;
+    }
+
+    .one, .two, form label {
+      font-size: 2rem; /* Adjusted font size for headings and form labels */
+  }
+
+  .para-1, .para-2, form input, button {
+      font-size: 1.5rem; /* Adjusted font size for paragraphs, form inputs, and buttons */
+  }
   }
 
   
@@ -196,3 +289,10 @@ button{
       box-shadow: 5px 5px black;
   }
 }
+
+@media screen and (max-width: 768px) {
+  body {
+      font-size: 18px;
+  }
+}
+
