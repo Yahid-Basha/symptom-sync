@@ -2,117 +2,105 @@
     {% load static %}
     <head>
         <title>Profile | IndianHealthNetwork</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&family=Satisfy&family=Stylish&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <div class="nav">
-            <h2 class="Brand-name">Indian Health Network</h2>
-            <img class="logo" src="{% static 'logo.png' %}" alt="logo"> 
+            <div class="nav-start">
+                <img class="logo" src="{% static 'logo.png' %}" alt="logo">
+                <h2 class="Brand-name">Indian Health Network</h2>
+            </div>
+             
+            <div class="nav-end-menu">
+                <div class="nav-home"><a href="{% url 'home' %}">Home</a></div>
+                <div class="nav-login"><a href="{% url 'login' %}">Logout</h3></a></div>
+                <!-- <div class="nav-signUp"><a href="{% url 'signup' %}">SignUp</a></div> -->
+            </div>
+        </div>   
 
-            <ul class="menu">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'login' %}">LogIn</a></li>
-                <li><a href="{% url 'signup' %}">SignUp</a></li>
-            </ul>
-        </div> 
-        <p>My Profile</p>
-        
-        <table  width="100%">
-                    <tr>
-                        <td>
-                            <div class="image">
-                                <center><img src="{% static 'logo.png' %}" width="300px" class="profile"></center>
-                            </div>
-                        </td>
-                        <td >
-                            <table width="400px">
-                                <captio><h3  style="padding:26px ;">Similar to You</h3></captio>
-                                <tr>
-                                    <td>
-                                        {% for user in usera.cluster_users %}
-                                        <h3>{{user}}</h3>
-                                        {% endfor %}
-                                    </td>
-                                    <br>
-                                    <td>
-                                        {% for eml in usera.cluster_emails %}
-                                        <h3>{{eml}}</h3>
-                                        {% endfor %}
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <form action="/refresh" method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" name="username" value="{{usera.Username}}"><br>
-                                <input type="submit" name="refresh" value="Refresh">
-                            </form>
-                                        <br>
-                                        <a href=""><h3>Edit Profile</a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="{% url 'login' %}">Logout</h3></a>
-                                        <button class="button" style="vertical-align:middle"><span>Daily Analysis</span></button>
-                        
-                                    </div>
-                                    
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <p style="margin: 0; font-size: xx-large; ">Personal Details</p>
-        <div class="Details">
-        <table class="personal">
-            <tr>
-                <td>
-                    <table width="700px" class="tablea">
+        <div class="start-container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="{% static 'profile-img.png' %}" class="profile">
+                </div>
+                
+                <div class="details-container">
+                    <div class="profile">My Profile</div>
+                    <table class="personal-details-table">
                         <tr>
-                            <td>Full Name </td>
+                            <td>Full Name</td>
                             <td>: {{usera.Full_Name}}</td>
                         </tr>
                         <tr>
-                            <td>Gender </td>
+                            <td>Gender</td>
                             <td>: {{usera.Gender}}</td>
                         </tr>
                         <tr>
-                            <td>Username </td>
+                            <td>Username</td>
                             <td>: {{usera.Username}}</td>
                         </tr>
                         <tr>
-                            <td>Email Id </td>
+                            <td>Email Id</td>
                             <td>: {{usera.Email}}</td>
                         </tr>
                         <tr>
-                            <td>Date of Birth </td>
+                            <td>Date of Birth</td>
                             <td>: {{usera.DateOfBirth}}</td>
                         </tr>
                         <tr>
-                            <!-- <td>Age</td>
-                            <td></td> -->
-                        </tr>
-                        <tr>
-                            <td>Blood Group </td>
+                            <td>Blood Group</td>
                             <td>: {{usera.BloodGroup}}</td>
                         </tr>
                         <tr>
-                            <td>Health problems </td>
+                            <td>Health problems</td>
                             <td>: {{usera.health_problems}}</td>
                         </tr>
                     </table>
-                </td>
-            </tr>   
-        </table>
-        </div>
-        <div class="user">
-        
-            <table width="100%">
-                <tr>
-                    <td>
-                        <form enctype="multipart/form-data" action="/storage" method="POST">
+                    <div class="profile-actions">
+                        <form action="/refresh" method="POST">
                             {% csrf_token %}
-                        <h3>Upload the Medical Prescriptions</h3>
+                            <input type="hidden" name="username" value="{{usera.Username}}">
+                            <input type="submit" name="refresh" value="Refresh">
+                        </form>
+                        <a href="">Edit Profile</a>
+                        <!-- <button class="button"><span>Daily Analysis</span></button> -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="similar-container">
+                <div class="heading">Similar to You</div>
+                <div class="similar-users">
+                    <div>
+                        {% for user in usera.cluster_users %}
+                        <div class="userName">{{user}}</div>
+                        {% endfor %}
+                    </div>
+                    <div >
+                        {% for eml in usera.cluster_emails %}
+                        <div class="emailId">{{eml}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="user">
+            <div class="forms-container">
+                <div class="form-upload">
+                    <form enctype="multipart/form-data" action="/storage" method="POST">
+                        {% csrf_token %}
+                        <h3>Upload the Medical files</h3>
                         <input type="hidden" name="username" value="{{usera.Username}}"><br>
                         <label><input type="file" name="p_image" id="file" class="inputfile" /></label><br>
                         <input type="text" name="file_name" placeholder="Save as (File Name)"><br>
@@ -123,20 +111,17 @@
                         </select>
                         <br>
                         <input type="submit" value="Upload">
-                        </form>
-                        <br>
-                    </td>
-                    <td>
-                        <form action="/Data" method="POST">
-                            {% csrf_token %}
+                    </form>
+                    <br>
+                </div>
+
+                <div class="form-update">
+                    <form action="/Data" method="POST">
+                        {% csrf_token %}
                         <h3>Update today's Readings :</h3>
-                        <br>
                         <input type="hidden" name="username" value="{{usera.Username}}"><br>
-                        <br>
-                        <h2>Choose what to Update</h2>
-                        <br>
                         <select name="readings" id="Healthprob-select">
-                            <option value="">--Please choose an option--</option>
+                            <option value="">--Choose what to Update--</option>
                             <option value="Blood Pressure">Blood Pressure</option>
                             <option value="Blood Sugar">Blood Sugar</option>
                             <option value="Heart Rate">Heart Rate</option>
@@ -146,153 +131,84 @@
                         <input type="text" name="value" placeholder="Enter the value" class="inputfile" required><br>
                         <input type="submit" value="Update">
                         <br>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-            <table width="100%">
-                <tr>
-              <td>
-                <table  style="border-collapse: collapse; border: 2px solid black; margin-left: 10px; border-radius: 8px; width :100%">
-                    <caption><h2>Prescription Files</h2></caption>
-                    <tr>
-                        <td>
-                        <table>
-                            <tr>
-                            <h3 style="text-align:center; padding-top:10px">File Name</h3>
-                            <br>
-                            <hr>
-                            <br>
-                            <div class="container">
-                                <div class="row">
-                                    {% for i in usera.pfile_names %}
-                                    <div class="col-md-4">
-                                        <div class="card">
-                                         <p style="text-align:center ;">{{i}}</p><br>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
+                    </form>
+                </div>
+            </div>
+
+              
+            <div class="prescription-files">
+                <h2>Prescription Files</h2>
+                <div class="flex-container">
+                    <div class="file-section">
+                        <h3>File Name</h3>
+                        <div class="file-container">
+                            {% for i in usera.pfile_names %}
+                            <div class="file-card">
+                                <p>{{i}}</p>
                             </div>
-                        </tr>
-                        </table>
-                        </td>
-                        <td>
-                        <table>
-                            <tr>
-                            <h3 style="text-align:center; padding-top:10px"> Prescriptions</h3>
-                            <br>
-                            <hr>
-                            <br>
-                            <div class="container">
-                                <div class="row">
-                                    {% for i in usera.prescriptions_urls %}
-                                    <div class="col-md-4">
-                                        <div class="card">
-                                           <center><a href= '{{i}}' >View</a></center>
-                                            <br>
-                                           
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </tr>
-                        </table>
-                        </td>
-                        <td>
-                        <table>
-                            <tr>
-                            <h3 style="text-align:center; padding-top:10px;">Upload-Time</h3>
-                            <br>
-                            <hr>
-                            <br>
-                            <div class="container">
-                                <div class="row">
-                                    {% for i in usera.prescriptions_times %}
-                                    <div class="col-md-4">
-                                        <div class="card">
-                                           <p style="text-align:center ;">{{i}}</p><br>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </tr>
-                        </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        <td style="padding-left:12px ;"> 
-    <table style="border-collapse: collapse; border: 2px solid black; margin-left: 10px; border-radius: 8px; width:100%">
-        <caption><h2>Other Files</h2></caption>
-        <tr>
-            <td>
-                <h3 style="text-align:center; ">File Name</h3>
-                <br>
-                <hr>
-                <br>
-                <div class="container">
-                    <div class="row">
-                        {% for i in usera.ofile_names %}
-                        <div class="col-md-4">
-                            <div class="card">
-                               <p style="text-align:center ;">{{i}}</p> <br>
-                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
+                    </div>
+                    <div class="prescription-section">
+                        <h3>Prescriptions</h3>
+                        <div class="prescription-container">
+                            {% for i in usera.prescriptions_urls %}
+                            <div class="prescription-card">
+                                <a href='{{i}}'>View</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="upload-time-section">
+                        <h3>Upload-Time</h3>
+                        <div class="upload-time-container">
+                            {% for i in usera.prescriptions_times %}
+                            <div class="upload-time-card">
+                                <p>{{i}}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-
-            </td>
-            <td>
-                <h3 style="text-align:center; ">Download</h3>
-                <br>
-                <hr>
-                <br>
-                <div class="container">
-                    <div class="row">
-                        {% for i in usera.others_urls %}
-                        <div class="col-md-4">
-                            <div class="card">
-                                <p style="text-align:center ;"><a href="{{i}}" target="_blank">View</a></p><br>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </td>
-            <td>
-                <h3 style="text-align:center; ">Upload-Time</h3>
-                <br>
-                <hr>
-                <br>
-                <div class="container">
-                    <div class="row">
-                        {% for i in usera.others_times %}
-                        <div class="col-md-4">
-                            <div class="card">
-                               <p style="text-align:center ;">{{i}}</p> <br>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
-    </td>
-</tr>
-</table>
-    </div>
-</div>
-
-
+            </div>
             
-
-<div>
-    <br>
+            <div class="other-files">
+                <h2>Other Files</h2>
+                <div class="flex-container">
+                    <div class="file-name-section">
+                        <h3>File Name</h3>
+                        <div class="file-name-container">
+                            {% for i in usera.ofile_names %}
+                            <div class="file-name-card">
+                                <p>{{i}}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="download-section">
+                        <h3>Download</h3>
+                        <div class="download-container">
+                            {% for i in usera.others_urls %}
+                            <div class="download-card">
+                                <a href="{{i}}" target="_blank">View</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="upload-time-section">
+                        <h3>Upload-Time</h3>
+                        <div class="upload-time-container">
+                            {% for i in usera.others_times %}
+                            <div class="upload-time-card">
+                                <p>{{i}}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     </body>
