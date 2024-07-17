@@ -4,7 +4,7 @@
 Indian Health Network is a Django-based web application that serves as a connecting platform for individuals with similar health conditions. The platform allows users to store prescriptions and bills, input and visualize their vital signs, and connect with others sharing similar health issues.
 
 ## UI
-![User Dashboard](/workspaces/symptom-sync/frontend/static/communityImg.png)
+![UI Images 1](https://github.com/VengalaKrishnaveni/Indian-Health-Network/frontend/static/airplane.png)
 
 ## Features
 
