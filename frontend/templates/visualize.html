@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,27 +13,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="\static\home.css">
-    <link rel="stylesheet" type="text/css" href="\static\profile.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'visualize.css' %}">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cinzel&family=Della+Respira&family=Inter:wght@300&family=Italiana&family=Satisfy&family=Stylish&display=swap" rel="stylesheet">
+
 
     <title></title>
   </head>
     <body>
-        <div class="navbar">
-        <div class="abc"><img src="\static\logo.png" class="log"> </div>
-        <div class="icon">
-            <h2 class="logo">IndianHealthNetwork</h2>
-        </div>            
-        <div class="menu">
-            <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'profile' %}">My Profile</a></li>
-            </ul>
+      <div class="nav">
+        <div class="nav-start">
+            <img class="logo" src="{% static 'logo.png' %}" alt="logo">
+            <h2 class="Brand-name">Indian Health Network</h2>
         </div>
-    </div>
+         
+        <div class="nav-end-menu">
+            <div class="nav-home"><a href="{% url 'home' %}">Home</a></div>
+            <div class="nav-login"><a href="{% url 'profile' %}">My Profile</h3></a></div>
+        </div>
+      </div>   
     <br>
     <br>
-    <center><h2>Hii! Here is your daily data Analysis</h2></center>
+      <div class="heading-text">
+        <h2> Hii! Here is your daily data Analysis</h2>
+      </div>
     <br>
     <br>
 <div>

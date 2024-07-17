@@ -338,11 +338,22 @@ select, input[type="submit"] {
 .prescription-files{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prescription-files h2{
+  font-family: 'Italiana', serif;
+}
+.other-files h2{
+  font-family: 'Italiana', serif;
 }
 
 .other-files{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-container{
@@ -350,10 +361,11 @@ select, input[type="submit"] {
   justify-content: center;
   align-items: center;
   gap: 80px;
-  border: 1px solid rgb(139, 139, 139);
+  /* border: 1px solid rgb(139, 139, 139); */
   width: max-content;
   padding: 0px 70px;
   padding-bottom: 20px;
+  background-color: #8492b036;
 }
 
 .file-section p{
@@ -365,6 +377,7 @@ select, input[type="submit"] {
   padding: 12px 20px;
   background-color: #f3f3f3;
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  font-family: 'Inter', sans-serif;  
 }
 
 
@@ -375,18 +388,25 @@ select, input[type="submit"] {
   transform: translateY(-5px); 
 }
 
+.file-section h3, .prescription-section h3, .upload-time-section h3, .file-name-section h3, .download-section h3{
+  text-align: center;
+  font-family: 'Inter', sans-serif;  
+}
 
 .prescription-section a, .download-section a{
   font-size: 18px;
   border: 1px solid rgb(212, 212, 212);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
   border-radius: 25px;
-  padding: 12px 20px;
+  padding: 8px 12px;
   background-color: #f3f3f3;
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
   display: block;
   text-align: center;
+  width: 30px;
+  font-family: 'Inter', sans-serif;  
+  margin: 0px auto;
+  margin-bottom: 10px;
 }
 
 .prescription-section a:hover, .download-section a:hover{
@@ -404,6 +424,7 @@ select, input[type="submit"] {
   padding: 12px 20px;
   background-color: #f3f3f3;
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  font-family: 'Inter', sans-serif;  
 }
 
 
