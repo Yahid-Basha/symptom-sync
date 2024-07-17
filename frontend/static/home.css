@@ -280,6 +280,8 @@ h1{
 }
 
 
+
+
 h1, h2, h3, h4, h5 {
   margin: 0;
   /* font-weight: 400; */
@@ -344,8 +346,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .card__caption p{
+  /* font-weight: 900;  */
   font-family: 'Inter', sans-serif;
-  font-weight: 900;
 }
 
 .card__image-container {
@@ -357,12 +359,12 @@ h1, h2, h3, h4, h5 {
 
 .card__name {
   position: absolute;
-  top: 0;
-  right: 1em;
+  top: 0.3em;
+  right: 2em;
   transform: translateY(-50%);
   color: #ffffff;
   text-transform: uppercase;
-  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  /* font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif; */
   letter-spacing: 0.1em;
   padding: 0.25em;
   line-height: 1;
@@ -382,7 +384,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
 }
 .card__stats th {
-  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  /* font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif; */
   text-align: right;
   font-weight: 300;
 }
