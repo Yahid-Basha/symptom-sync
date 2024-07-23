@@ -4,7 +4,21 @@
 Indian Health Network is a Django-based web application that serves as a connecting platform for individuals with similar health conditions. The platform allows users to store prescriptions and bills, input and visualize their vital signs, and connect with others sharing similar health issues.
 
 ## UI
-![UI Images 1](https://github.com/VengalaKrishnaveni/Indian-Health-Network/frontend/static/airplane.png)
+
+1) Home page
+![1](https://github.com/user-attachments/assets/f74226ad-d96b-4298-8a34-20ba1df14f6f)
+![image](https://github.com/user-attachments/assets/84e7c3d9-e2a0-4cd8-ae05-49e2539ecb14)
+![3](https://github.com/user-attachments/assets/194fd3f8-f307-4863-bf0a-3a2e59f5d204)
+
+2) Signup page
+![Screenshot_17-7-2024_22446_potential-cod-4pqxq95j45q37q9g-8000 app github dev](https://github.com/user-attachments/assets/5af674c9-68a1-4355-b2f5-118a73a5aa41)
+
+3) Login page
+![Screenshot_17-7-2024_224128_potential-cod-4pqxq95j45q37q9g-8000 app github dev](https://github.com/user-attachments/assets/c32b76f4-839d-4938-8db8-8b7a4ea9849b)
+
+4) Profile page
+![Screenshot_17-7-2024_22452_potential-cod-4pqxq95j45q37q9g-8000 app github dev](https://github.com/user-attachments/assets/77d105da-969a-4e0f-b875-26db8a844d4c)
+![Screenshot_17-7-2024_224621_potential-cod-4pqxq95j45q37q9g-8000 app github dev](https://github.com/user-attachments/assets/65139d53-8c9d-48be-838d-68f1d91cb7a3)
 
 ## Features
 
