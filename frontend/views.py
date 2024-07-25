@@ -124,8 +124,8 @@ def signup(request):
     else:
         message="Username already exists"
         print(message)
-        return render(request,'signin.html',{'msg':message})
-    return render(request,'signin.html')
+        return render(request,'signup.html',{'msg':message})
+    return render(request,'signup.html')
 
 
 def terms(request):
