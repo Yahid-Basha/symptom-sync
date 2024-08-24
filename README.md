@@ -1,5 +1,5 @@
 
-# Indian Health Network
+# Symptom Sync
 
 Indian Health Network is a Django-based web application that serves as a connecting platform for individuals with similar health conditions. The platform allows users to store prescriptions and bills, input and visualize their vital signs, and connect with others sharing similar health issues.
 
